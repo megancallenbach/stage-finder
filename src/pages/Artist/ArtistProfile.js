@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 
-class ArtistProfile extends PureComponent {
+export default class ArtistProfile extends PureComponent {
   constructor() {
     super()
     this.state = {}
@@ -11,11 +11,11 @@ class ArtistProfile extends PureComponent {
       <div className="form">
         <h1>Create Your Artist Profile</h1>
 
-        <form onSubmit={this.submitForm.bind(this)}>
+        <form>
           <div class="form-group row">
-            <label for="example-text-input" class="col-2 col-form-label">Text</label>
+            <label for="artist-name" class="col-2 col-form-label">Artist Name</label>
             <div class="col-10">
-              <input class="form-control" type="text" value="Artisanal kale" id="example-text-input"/>
+              <input class="form-control" type="text" placeholder="artist name" id="artist-name"/>
             </div>
           </div>
           <div class="form-group row">
@@ -95,5 +95,3 @@ class ArtistProfile extends PureComponent {
     )
   }
 }
-
-export default ArtistProfile
