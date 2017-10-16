@@ -9,39 +9,16 @@ export default () => {
 
     const backend = api.service('artists')
 
-    api.authenticate()
-      .then(() => {
-
-        backend.find({
-          query: {
-            $sort: {
-              name: 1,
-            },
-          }
-        })
-          .then((result) => {
-            console.log(result)
-            dispatch({
-              type: FETCHED_ARTISTS,
-              payload: result.data
-            })
-          })
-          .catch((error) => {
-            console.log(error)
-          })
+    backend.find()
+      .then((result) => {
+        console.log(result)
+        dispatch({
+          type: FETCHED_ARTISTS,
+          payload: result
+        });
       })
       .catch((error) => {
-        backend.find()
-          .then((result) => {
-            dispatch({
-              type: FETCHED_ARTISTS,
-              payload: result.data
-            })
-          })
-          .catch((error) => {
-            console.log(error)
-          })
+        console.error(error)
       })
-
   }
 }
