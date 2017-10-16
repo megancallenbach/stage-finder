@@ -1,13 +1,10 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 // import signOut from '../actions/user/sign-out'
 import { Link } from 'react-router'
 
-export class Navbar extends PureComponent {
-  static propTypes = {
-    signedIn: PropTypes.bool.isRequired,
-  }
+class Navbar extends PureComponent {
+
 
   // signOut(event) {
   //   event.preventDefault()
@@ -15,7 +12,6 @@ export class Navbar extends PureComponent {
   // }
 
   render() {
-    const { signedIn } = this.props
     return (
 
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -40,8 +36,6 @@ export class Navbar extends PureComponent {
 
 
 
-const mapStateToProps = ({ currentUser }) => ({
-  signedIn: (!!currentUser && !!currentUser._id)
-})
 
-export default connect(mapStateToProps, {  })(Navbar)
+
+export default Navbar;

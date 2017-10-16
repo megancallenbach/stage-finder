@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Navbar from './components/Navbar'
 import SearchBar from './components/SearchBar'
+import Footer from './components/Footer'
 
 class App extends Component {
   render() {
@@ -9,7 +10,9 @@ class App extends Component {
       <div className="App">
         <Navbar />
         <SearchBar />
+
         {this.props.children}
+        <Footer />
       </div>
     );
   }
