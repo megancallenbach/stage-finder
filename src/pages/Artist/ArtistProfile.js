@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import '../../styles/Form.css'
 
 export default class ArtistProfile extends PureComponent {
   constructor() {
@@ -8,89 +9,57 @@ export default class ArtistProfile extends PureComponent {
 
   render() {
     return (
-      <div className="form">
-        <h1>Create Your Artist Profile</h1>
-
-        <form>
-          <div class="form-group row">
-            <label for="artist-name" class="col-2 col-form-label">Artist Name</label>
-            <div class="col-10">
-              <input class="form-control" type="text" placeholder="artist name" id="artist-name"/>
+      <div className="background">
+        <div className="wrapper artist-profile">
+          <h1>Create Your Artist Profile</h1>
+          <form>
+            <div className="form-group row">
+              <label className="col-2 col-form-label">Artist Name</label>
+              <div className="col-10">
+                <input className="form-control" type="text" id="artist-name"/>
+              </div>
             </div>
-          </div>
-          <div class="form-group row">
-            <label for="example-search-input" class="col-2 col-form-label">Search</label>
-            <div class="col-10">
-              <input class="form-control" type="search" value="How do I shoot web" id="example-search-input"/>
+            <div className="form-group row">
+              <label className="col-2 col-form-label">City</label>
+              <div className="col-10">
+                <input className="form-control" type="text" id="city"/>
+              </div>
             </div>
-          </div>
-          <div class="form-group row">
-            <label for="example-email-input" class="col-2 col-form-label">Email</label>
-            <div class="col-10">
-              <input class="form-control" type="email" value="bootstrap@example.com" id="example-email-input"/>
+            <div className="form-group row">
+              <label className="col-2 col-form-label"> Upload Image </label>
+              <div className="col-10">
+                <label className="custom-file">
+                  <input type="file" id="file2" className="custom-file-input"/>
+                  <span className="custom-file-control"></span>
+                </label>
+              </div>
             </div>
-          </div>
-          <div class="form-group row">
-            <label for="example-url-input" class="col-2 col-form-label">URL</label>
-            <div class="col-10">
-              <input class="form-control" type="url" value="https://getbootstrap.com" id="example-url-input"/>
+            <div className="form-group row">
+              <label className="col-2 col-form-label">Artist Description</label>
+              <div className="col-10">
+                <textarea className="form-control" id="description" rows="4"></textarea>
+              </div>
             </div>
-          </div>
-          <div class="form-group row">
-            <label for="example-tel-input" class="col-2 col-form-label">Telephone</label>
-            <div class="col-10">
-              <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input"/>
+            <div className="form-group row">
+              <label className="col-2 col-form-label">Bio</label>
+              <div className="col-10">
+                <textarea className="form-control" id="bio" rows="4"></textarea>
+              </div>
             </div>
-          </div>
-          <div class="form-group row">
-            <label for="example-password-input" class="col-2 col-form-label">Password</label>
-            <div class="col-10">
-              <input class="form-control" type="password" value="hunter2" id="example-password-input"/>
+            <div className="form-group row">
+              <label className="col-2 col-form-label">Quote</label>
+              <div className="col-10">
+                <input placeholder="Jouw meest tekenend songtekst of quote in 70 karakters" className="form-control" type="text" id="quote"/>
+              </div>
             </div>
-          </div>
-          <div class="form-group row">
-            <label for="example-number-input" class="col-2 col-form-label">Number</label>
-            <div class="col-10">
-              <input class="form-control" type="number" value="42" id="example-number-input"/>
+            <div className="form-group row">
+              <label className="col-2 col-form-label">Video URL</label>
+              <div className="col-10">
+                <input placeholder="YouTube Embed URL" className="form-control" type="text" id="video"/>
+              </div>
             </div>
-          </div>
-          <div class="form-group row">
-            <label for="example-datetime-local-input" class="col-2 col-form-label">Date and time</label>
-            <div class="col-10">
-              <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input"/>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="example-date-input" class="col-2 col-form-label">Date</label>
-            <div class="col-10">
-              <input class="form-control" type="date" value="2011-08-19" id="example-date-input"/>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="example-month-input" class="col-2 col-form-label">Month</label>
-            <div class="col-10">
-              <input class="form-control" type="month" value="2011-08" id="example-month-input"/>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="example-week-input" class="col-2 col-form-label">Week</label>
-            <div class="col-10">
-              <input class="form-control" type="week" value="2011-W33" id="example-week-input"/>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="example-time-input" class="col-2 col-form-label">Time</label>
-            <div class="col-10">
-              <input class="form-control" type="time" value="13:45:00" id="example-time-input"/>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="example-color-input" class="col-2 col-form-label">Color</label>
-            <div class="col-10">
-              <input class="form-control" type="color" value="#563d7c" id="example-color-input"/>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     )
   }

@@ -4,7 +4,9 @@ export default class HomePage extends PureComponent {
   render() {
     return (
       <div className="home-page">
-        <h1> Home Page </h1>
+        <div className="wrapper">
+          <h1> Home Page </h1>
+        </div>
       </div>
     )
   }
