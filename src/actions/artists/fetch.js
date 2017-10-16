@@ -14,7 +14,7 @@ export default () => {
         console.log(result)
         dispatch({
           type: FETCHED_ARTISTS,
-          payload: result
+          payload: result.data
         });
       })
       .catch((error) => {

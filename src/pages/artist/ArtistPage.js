@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import fetchArtists from 'actions/artists/fetch'
+import fetchArtists from '../../actions/artists/fetch'
 
 class ArtistPage extends PureComponent {
 
@@ -8,9 +8,20 @@ class ArtistPage extends PureComponent {
     this.props.fetchArtists()
   }
 
+  renderArtist(artist){
+    return <li>{artist.name}</li>
+  }
+
   render() {
+    const artists = this.props.artists
+    if (!artists) return null
     return(
-      <h1>Here are all the artists</h1>
+      <div>
+        <h1>Here are all the artists</h1>
+        <ul>
+          { artists.map(this.renderArtist.bind(this)) }
+        </ul>
+      </div>
     )
   }
 }
