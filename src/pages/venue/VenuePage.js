@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import fetchVenues from '../../actions/venues/fetch'
+import '../../styles/VenuePage.css'
 
 class VenuePage extends PureComponent {
 
@@ -9,18 +10,35 @@ class VenuePage extends PureComponent {
   }
 
   renderVenue(venue){
-    return <li>{venue.name}</li>
-  }
+    return(
+
+  <div className="venue col-sm-12">
+      <div className="venue-box">
+        <div className="venue-image">
+          <img src={venue.photo} alt="" />
+        </div>
+        </div>
+          <div className="venue-content">
+          <p className="venue-name">{venue.name}</p>
+        <p className="venue-description">{venue.description}</p>
+        <p className="venue-city">{venue.city}</p>
+    </div>
+  </div>
+ )
+}
 
   render() {
-    const venues = this.props.venues
+   const venues = this.props.venues
     if (!venues) return null
+
     return(
       <div>
-        <h1>Here are all the venues</h1>
-        <ul>
-          { venues.map(this.renderVenue.bind(this)) }
-        </ul>
+        <h1>Discover the Venues</h1>
+        <div className="venues-container">
+          <div className="row">
+            { venues.map(this.renderVenue.bind(this)) }
+          </div>
+        </div>
       </div>
     )
   }

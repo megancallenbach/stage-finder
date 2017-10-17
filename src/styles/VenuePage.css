@@ -1,0 +1,31 @@
+.venue {
+  display: flex;
+  font-size: 20px;
+  width: 700px;
+  height: 485px;
+  border-radius: 4px;
+  padding: 0px;
+  justify-content: center; }
+
+img {
+  display: flex;
+  width: 650px;
+  height: 485px;
+  flex-direction: column;
+  padding-right: 0px; }
+
+.venue-name {
+  display: flex;
+  font-size: 40px;
+  font-family: 'Montserrat Subrayada', sans-serif; }
+
+.venue-description {
+  display: flex;
+  width: 650px;
+  flex-direction: column;
+  padding: 0px; }
+
+.venue-content {
+  background: rgba(0, 0, 0, 0.8);
+  padding-left: 0px;
+  float: left; }
