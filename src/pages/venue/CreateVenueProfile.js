@@ -27,10 +27,10 @@ class CreateVenueProfile extends PureComponent {
     return (
       <div className="background">
         <div className="wrapper artist-profile">
-          <h1>Create Your Artist Profile</h1>
+          <h1>Create Your Venue Profile</h1>
           <form onSubmit={this.submitForm.bind(this)}>
             <div className="form-group row">
-              <label className="col-2 col-form-label">Artist Name</label>
+              <label className="col-2 col-form-label">Venue Name</label>
               <div className="col-10">
                 <input
                   className="form-control"

@@ -1,6 +1,5 @@
 import API from '../../api'
 import signIn from './signIn'
-import { history } from '../../store'
 
 export const USER_SIGNED_UP = 'USER_SIGNED_UP'
 
