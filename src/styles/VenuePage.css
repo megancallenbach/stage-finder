@@ -1,4 +1,4 @@
-.venue {
+.venue-even {
   display: flex;
   font-size: 20px;
   width: 700px;
@@ -6,6 +6,16 @@
   border-radius: 4px;
   padding: 0px;
   justify-content: center; }
+
+.venue-odd {
+  display: flex;
+  font-size: 20px;
+  width: 700px;
+  height: 485px;
+  border-radius: 4px;
+  padding: 0px;
+  justify-content: center;
+  flex-direction: row-reverse; }
 
 img {
   display: flex;

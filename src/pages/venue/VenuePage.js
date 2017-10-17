@@ -9,22 +9,35 @@ class VenuePage extends PureComponent {
     this.props.fetchVenues()
   }
 
-  renderVenue(venue){
-    return(
-
-  <div className="venue col-sm-12">
-      <div className="venue-box">
-        <div className="venue-image">
-          <img src={venue.photo} alt="" />
+  renderVenue(venue, index){
+    if (index % 2 === 0) return(
+      <div className="venue-even col-sm-12">
+          <div className="venue-box">
+            <div className="venue-image">
+              <img src={venue.photo} alt="" />
+            </div>
+            </div>
+              <div className="venue-content">
+              <p className="venue-name">{venue.name}</p>
+            <p className="venue-description">{venue.description}</p>
+            <p className="venue-city">{venue.city}</p>
         </div>
-        </div>
-          <div className="venue-content">
-          <p className="venue-name">{venue.name}</p>
-        <p className="venue-description">{venue.description}</p>
-        <p className="venue-city">{venue.city}</p>
-    </div>
-  </div>
+      </div>
  )
+    return (
+      <div className="venue-odd col-sm-12">
+          <div className="venue-box">
+            <div className="venue-image">
+              <img src={venue.photo} alt="" />
+            </div>
+            </div>
+              <div className="venue-content">
+              <p className="venue-name">{venue.name}</p>
+            <p className="venue-description">{venue.description}</p>
+            <p className="venue-city">{venue.city}</p>
+        </div>
+      </div>
+    )
 }
 
   render() {
