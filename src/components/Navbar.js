@@ -4,7 +4,6 @@ import signOut from '../actions/users/signOut'
 import { Link } from 'react-router'
 import '../styles/Navbar.css'
 
-
 class Navbar extends PureComponent {
 
   signOutUser(){
@@ -64,5 +63,6 @@ class Navbar extends PureComponent {
 }
 
 const mapStateToProps = ({ currentUser }) => ({ currentUser })
+
 
 export default connect(mapStateToProps, { signOut })(Navbar)
