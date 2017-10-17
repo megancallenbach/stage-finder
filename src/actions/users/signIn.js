@@ -1,4 +1,5 @@
 import API from '../../api'
+import { history } from '../../store'
 
 export const USER_SIGNED_IN = 'USER_SIGNED_IN'
 
@@ -11,6 +12,7 @@ export default (user) => {
     api.signIn(user)
       .then((result) => {
         api.app.set('user', user)
+        history.push('/')
         dispatch({
           type: USER_SIGNED_IN,
           payload: result
