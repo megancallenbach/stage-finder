@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react'
 import '../styles/HomePage.css'
-import Navbar from '../components/Navbar'
 import { Link } from 'react-router'
 
 export default class HomePage extends PureComponent {
