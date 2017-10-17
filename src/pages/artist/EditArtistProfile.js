@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import updateArtist from '../../actions/artists/update'
 import '../../styles/Form.css'
 
 class EditArtistProfile extends PureComponent {
@@ -10,6 +11,7 @@ class EditArtistProfile extends PureComponent {
 
   submitForm(event){
     event.preventDefault()
+    const { artistProfileId } = this.props.currentUser
     const { name, city, image, description, bio, quote, video, soundcloud, spotify, youtube, facebook } = this.refs
     const artistData = {
       name: name.value,
@@ -24,7 +26,7 @@ class EditArtistProfile extends PureComponent {
       youtube: youtube.value,
       facebook: facebook.value
     }
-    console.log(artistData)
+    this.props.updateArtist(artistProfileId, artistData)
   }
 
   render() {
@@ -166,4 +168,4 @@ class EditArtistProfile extends PureComponent {
 
 const mapStateToProps = ({ currentUser }) => ({ currentUser })
 
-export default connect(mapStateToProps, {  })(EditArtistProfile)
+export default connect(mapStateToProps, { updateArtist })(EditArtistProfile)
