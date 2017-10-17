@@ -12,11 +12,12 @@ export default (user) => {
     api.signIn(user)
       .then((result) => {
         api.app.set('user', user)
-        history.push('/')
         dispatch({
           type: USER_SIGNED_IN,
           payload: result
         })
+        if(result.artistProfileId || result.venueProfileId)history.push('/')
+        else history.push('/create-profile')
       })
       .catch((error) => {
         console.log(error)

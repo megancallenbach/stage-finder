@@ -1,5 +1,7 @@
 import { USER_SIGNED_IN } from '../actions/users/signIn'
 import { USER_SIGNED_OUT } from '../actions/users/signOut'
+import { ARTIST_CREATED } from '../actions/artists/create'
+import { VENUE_CREATED } from '../actions/venues/create'
 
 const currentUserKey = 'currentUser-evaluation-app'
 const currentUserFromLocalStorage = JSON.parse(
@@ -16,6 +18,14 @@ export default (state = currentUserFromLocalStorage, { type, payload } = {}) => 
     case USER_SIGNED_OUT :
       window.localStorage.removeItem(currentUserKey)
       return null
+
+    case ARTIST_CREATED :
+      const artistProfile = payload
+      return { ...state, artistProfileId: artistProfile._id, artistProfile: artistProfile }
+
+    case VENUE_CREATED :
+      const venueProfile = payload
+      return { ...state, venueProfileId: venueProfile._id, venueProfile: venueProfile }
 
     default :
       return state

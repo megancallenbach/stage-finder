@@ -54,7 +54,6 @@ class API {
     password
   })
   .then((response) => {
-    console.log(response)
     return this.app.passport.verifyJWT(response.accessToken);
   })
   .then((payload) => {
