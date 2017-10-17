@@ -1,0 +1,24 @@
+li {
+  padding-left: 20px; }
+
+.sign-out {
+  text-align: right; }
+
+.bg-transparent {
+  background-color: transparent; }
+
+.navbar-light .navbar-brand {
+  font-family: 'Montserrat Subrayada', sans-serif;
+  color: white;
+  font-size: 30px; }
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+  font-weight: 300;
+  font-size: 17px; }
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: white;
+  font-weight: 300;
+  font-size: 17px;
+  text-decoration: underline; }

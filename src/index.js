@@ -21,15 +21,13 @@ ReactDOM.render(
       <Router history={history}>
         <Route path="/" component={App}>
           <IndexRoute component={HomePage} />
-          <Route path="/artists/profile" component={ArtistProfile} />
           <Route path="/sign-up" component={SignUp} />
           <Route path="/sign-in" component={SignIn} />
           <Route path="/artists" component={ArtistPage} />
           <Route path="/stages" component={VenuePage} />
-
           <Route path="/artists/:artistId" component={ArtistDetail} />
+          <Route path="/artists/:artistId/profile" component={ArtistProfile} />
           <Route path="/stages/:venueId" component={VenueDetail} />
-
           <Route path="/stages/:venueId/profile" component={VenueProfile} />
         </Route>
       </Router>
