@@ -16,13 +16,7 @@ class Footer extends PureComponent {
           <br />
           <Link to={'/about'} className='link'>Over ons</Link>
         </div>
-        <div className="jumbotron">
-          <div className="bigletter-container">
-            <div className="bigletter">
-              <Link to={'/'} className='link'>S</Link>
-            </div>
-          </div>
-        </div>
+        
 
       </div>
     )
