@@ -11,6 +11,7 @@ export default (user) => {
 
     backend.create(user)
       .then((result) => {
+        console.log(result)
         dispatch(signIn(user))
       })
       .catch((error) => {

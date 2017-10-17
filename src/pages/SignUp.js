@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import signUp from '../actions/users/signUp'
 
 export class SignUp extends PureComponent {
 
@@ -12,7 +13,7 @@ export class SignUp extends PureComponent {
         email: this.refs.email.value,
         password: this.refs.password.value
       }
-      console.log(user)
+      this.props.signUp(user)
     }
     return false
   }
@@ -108,4 +109,4 @@ export class SignUp extends PureComponent {
   }
 }
 
-export default connect(null, {  })(SignUp)
+export default connect(null, { signUp })(SignUp)
