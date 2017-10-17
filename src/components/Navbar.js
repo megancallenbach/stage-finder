@@ -17,9 +17,9 @@ class Navbar extends PureComponent {
     if (currentUser) return(
       <ul className="navbar-nav">
         <li className="nav-item">
-          <Link className="nav-link" onClick={this.signOutUser.bind(this)}>
+          <span className="nav-link" onClick={this.signOutUser.bind(this)}>
             log out
-          </Link>
+          </span>
         </li>
       </ul>
     )
