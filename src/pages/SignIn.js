@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import signIn from '../actions/users/signIn'
 import { replace } from 'react-router-redux'
+import '../styles/SignUp.css'
 
 class SignIn extends PureComponent {
 
@@ -21,15 +22,19 @@ class SignIn extends PureComponent {
   render(){
 
     return (
-      <div className="signIn">
-        <h2>Sign In</h2>
-        <form className="signInForm" onSubmit={this.submitForm.bind(this)}>
-          <h3>Email:</h3>
-          <input type="text" ref="email" />
-          <h3>Password:</h3>
-          <input type="password" ref="password" />
-          <input type="submit" value="Submit" />
-        </form>
+      <div className="formWrapper">
+        <header>
+          <h2>Sign In</h2>
+        </header>
+        <main>
+          <form className="signInForm" onSubmit={this.submitForm.bind(this)}>
+            <h3 className="formItem">Email:</h3>
+            <input className="formItem" type="text" ref="email" />
+            <h3 className="formItem">Password:</h3>
+            <input className="formItem" type="password" ref="password" />
+            <input className="formItem btn-submit" type="submit" value="Submit" />
+          </form>
+        </main>
       </div>
     )
   }
