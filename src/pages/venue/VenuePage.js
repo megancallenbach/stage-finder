@@ -17,10 +17,10 @@ class VenuePage extends PureComponent {
               <img src={venue.photo} alt="" />
             </div>
             </div>
-              <div className="venue-content">
-              <p className="venue-name">{venue.name}</p>
-            <p className="venue-description">{venue.description}</p>
-            <p className="venue-city">{venue.city}</p>
+              <div className="venue-content-even">
+              <p className="venue-name-even">{venue.name}</p>
+              <p className="venue-city-even">{venue.city}</p>
+            <p className="venue-description-even">{venue.description}</p>
         </div>
       </div>
  )
@@ -31,10 +31,10 @@ class VenuePage extends PureComponent {
               <img src={venue.photo} alt="" />
             </div>
             </div>
-              <div className="venue-content">
-              <p className="venue-name">{venue.name}</p>
-            <p className="venue-description">{venue.description}</p>
-            <p className="venue-city">{venue.city}</p>
+              <div className="venue-content-odd">
+              <p className="venue-name-odd">{venue.name}</p>
+            <p className="venue-city-odd">{venue.city}</p>
+            <p className="venue-description-odd">{venue.description}</p>
         </div>
       </div>
     )
