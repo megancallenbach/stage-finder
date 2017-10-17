@@ -10,7 +10,7 @@ import SignIn from './pages/SignIn'
 import HomePage from './pages/HomePage'
 import ArtistDetail from './pages/artist/ArtistDetail'
 import ArtistPage from './pages/artist/ArtistPage'
-import ArtistProfile from './pages/artist/ArtistProfile'
+import CreateArtistProfile from './pages/artist/CreateArtistProfile'
 import VenuePage from './pages/venue/VenuePage'
 import VenueDetail from './pages/venue/VenueDetail'
 import VenueProfile from './pages/venue/VenueProfile'
@@ -26,7 +26,7 @@ ReactDOM.render(
           <Route path="/artists" component={ArtistPage} />
           <Route path="/stages" component={VenuePage} />
           <Route path="/artists/:artistId" component={ArtistDetail} />
-          <Route path="/artists/:artistId/profile" component={ArtistProfile} />
+          <Route path="/create-artist" component={CreateArtistProfile} />
           <Route path="/stages/:venueId" component={VenueDetail} />
           <Route path="/stages/:venueId/profile" component={VenueProfile} />
         </Route>
