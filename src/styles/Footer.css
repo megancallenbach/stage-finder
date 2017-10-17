@@ -1,0 +1,16 @@
+.footer-container {
+  background-size: cover;
+  background-color: Silver; }
+
+.footer {
+  color: white;
+  font-weight: 300;
+  font-size: 24px;
+  font-family: 'Khula', sans-serif; }
+
+.link {
+  color: white; }
+
+.link:hover {
+  color: white;
+  text-decoration: none; }

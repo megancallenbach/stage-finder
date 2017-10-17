@@ -24,7 +24,7 @@ ReactDOM.render(
           <Route path="/sign-up" component={SignUp} />
           <Route path="/sign-in" component={SignIn} />
           <Route path="/artists" component={ArtistPage} />
-          <Route path="/stages" component={VenuePage} />
+          <Route path="/venues" component={VenuePage} />
           <Route path="/artists/:artistId" component={ArtistDetail} />
           <Route path="/create-artist" component={CreateArtistProfile} />
           <Route path="/stages/:venueId" component={VenueDetail} />
