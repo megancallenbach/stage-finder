@@ -50,7 +50,7 @@ class CreateVenueProfile extends PureComponent {
               </div>
             </div>
             <div className="form-group row">
-              <label className="col-2 col-form-label">City</label>
+              <label className="col-2 col-form-label">Address</label>
               <div className="col-10">
                 <input
                   className="form-control"
