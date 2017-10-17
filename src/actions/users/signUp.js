@@ -14,7 +14,6 @@ export default (user) => {
       .then((result) => {
         console.log(result)
         dispatch(signIn(user))
-        history.push("/create-profile")
       })
       .catch((error) => {
         console.error(error)
