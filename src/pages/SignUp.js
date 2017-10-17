@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import signUp from '../actions/users/signUp'
+import '../styles/SignUp.css'
 
 export class SignUp extends PureComponent {
 
@@ -88,22 +89,26 @@ export class SignUp extends PureComponent {
 
   render() {
     return (
-      <div className="signUp">
-        <h2>Sign Up</h2>
-        <ul>
-          { (this.state.emailError) ? <li>{this.state.emailError}</li> : null }
-          { (this.state.passwordError) ? <li>{this.state.passwordError}</li> : null }
-          { (this.state.passwordConfirmationError) ? <li>{this.state.passwordConfirmationError}</li> : null }
-        </ul>
-        <form className="signUpForm" onSubmit={this.submitForm.bind(this)}>
-          <h3>Email:</h3>
-          <input type="text" ref="email" />
-          <h3>Password:</h3>
-          <input type="password" ref="password" />
-          <h3>Confirm password:</h3>
-          <input type="password" ref="passwordConfirmation" />
-          <input type="submit" value="Submit" />
-        </form>
+      <div className="formWrapper">
+        <header>
+          <h2>Sign Up</h2>
+          <ul>
+            { (this.state.emailError) ? <li>{this.state.emailError}</li> : null }
+            { (this.state.passwordError) ? <li>{this.state.passwordError}</li> : null }
+            { (this.state.passwordConfirmationError) ? <li>{this.state.passwordConfirmationError}</li> : null }
+          </ul>
+        </header>
+        <main>
+          <form className="signUpForm" onSubmit={this.submitForm.bind(this)}>
+            <h3 className="formItem">Email:</h3>
+            <input className="formItem" type="text" ref="email" />
+            <h3 className="formItem">Password:</h3>
+            <input className="formItem" type="password" ref="password" />
+            <h3 className="formItem">Confirm password:</h3>
+            <input className="formItem" type="password" ref="passwordConfirmation" />
+            <input className="btn-submit formItem" type="submit" value="Submit" />
+          </form>
+        </main>
       </div>
     )
   }
