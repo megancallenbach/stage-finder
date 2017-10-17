@@ -11,7 +11,7 @@ class CreateArtistProfile extends PureComponent {
 
   submitForm(event){
     event.preventDefault()
-    const { name, city, image, description, bio, quote, video } = this.refs
+    const { name, city, image, description, bio, quote, video, soundcloud, spotify, youtube, facebook } = this.refs
     const newArtist = {
       name: name.value,
       photo: image.value,
@@ -19,7 +19,11 @@ class CreateArtistProfile extends PureComponent {
       city: city.value,
       quote: quote.value,
       video: video.value,
-      bio: bio.value
+      bio: bio.value,
+      soundcloud: soundcloud.value,
+      spotify: spotify.value,
+      youtube: youtube.value,
+      facebook: facebook.value
     }
     this.props.createArtist(newArtist)
   }
@@ -90,7 +94,31 @@ class CreateArtistProfile extends PureComponent {
             <div className="form-group row">
               <label className="col-2 col-form-label">Video URL</label>
               <div className="col-10">
-                <input placeholder="YouTube link" className="form-control" type="text" ref="video"/>
+                <input placeholder="YouTube video link" className="form-control" type="text" ref="video"/>
+              </div>
+            </div>
+            <div className="form-group row">
+              <label className="col-2 col-form-label">Soundcloud</label>
+              <div className="col-10">
+                <input placeholder="Your Soundcloud" className="form-control" type="text" ref="soundcloud"/>
+              </div>
+            </div>
+            <div className="form-group row">
+              <label className="col-2 col-form-label">Spotify</label>
+              <div className="col-10">
+                <input placeholder="Your Spotify" className="form-control" type="text" ref="spotify"/>
+              </div>
+            </div>
+            <div className="form-group row">
+              <label className="col-2 col-form-label">Youtube</label>
+              <div className="col-10">
+                <input placeholder="Your Youtube channel" className="form-control" type="text" ref="youtube"/>
+              </div>
+            </div>
+            <div className="form-group row">
+              <label className="col-2 col-form-label">Facebook</label>
+              <div className="col-10">
+                <input placeholder="Your Facebook page" className="form-control" type="text" ref="facebook"/>
               </div>
             </div>
             <input className="btn-submit formItem" type="submit" value="Submit" />
