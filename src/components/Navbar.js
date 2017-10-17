@@ -1,62 +1,68 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-// import signOut from '../actions/user/sign-out'
+import signOut from '../actions/users/signOut'
 import { Link } from 'react-router'
 import '../styles/Navbar.css'
 
 
-export class Navbar extends PureComponent {
-  // static propTypes = {
-  //   signedIn: PropTypes.bool.isRequired,
-  // }
+class Navbar extends PureComponent {
 
+  signOutUser(){
+    this.props.signOut()
+  }
 
-  // signOut(event) {
-  //   event.preventDefault()
-  //   this.props.signOut()
-  // }
+  sessionButtons(){
+    const { currentUser } = this.props
+
+    if (currentUser) return(
+      <ul className="navbar-nav">
+        <li className="nav-item">
+          <Link className="nav-link" onClick={this.signOutUser.bind(this)}>
+            sign out
+          </Link>
+        </li>
+      </ul>
+    )
+
+    return(
+      <ul className="navbar-nav">
+        <li className="nav-item">
+          <Link to={'/sign-in'} className="nav-link"> log in </Link>
+        </li>
+        <li className="nav-item">
+          <Link to={'/sign-up'} className="nav-link"> join! </Link>
+        </li>
+      </ul>
+    )
+  }
 
   render() {
 
-
-
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-faded">
-       <Link to={'/'} className="navbar-brand"> StageFinder </Link>
-       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-           <span className="navbar-toggler-icon"></span>
-       </button>
-       <div id="navbarNavDropdown" className="navbar-collapse collapse">
-           <ul className="navbar-nav mr-auto">
-               <li className="nav-item">
-                   <Link to={'/stages'} className="nav-link">all stages</Link>
-               </li>
-               <li className="nav-item">
-                   <Link to={'/artists'} className="nav-link">all artists</Link>
-               </li>
-               <li className="nav-item">
-                   <Link to={'/inspiration'} className="nav-link">inspiration</Link>
-               </li>
-
-           </ul>
-           <ul className="navbar-nav">
-               <li className="nav-item">
-                    <Link to={'/signin'} className="nav-link"> Login </Link>
-               </li>
-               <li className="nav-item">
-                   <Link to={'/signup'} className="nav-link"> Register </Link>
-               </li>
-           </ul>
-       </div>
-   </nav>
+        <Link to={'/'} className="navbar-brand"> StageFinder </Link>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbarNavDropdown" className="navbar-collapse collapse">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item">
+              <Link to={'/stages'} className="nav-link">all stages</Link>
+            </li>
+            <li className="nav-item">
+              <Link to={'/artists'} className="nav-link">all artists</Link>
+            </li>
+            <li className="nav-item">
+              <Link to={'/inspiration'} className="nav-link">inspiration</Link>
+            </li>
+          </ul>
+            { this.sessionButtons() }
+        </div>
+      </nav>
     )
   }
 }
 
-const mapStateToProps = ({ currentUser }) => ({
-  signedIn: (!!currentUser && !!currentUser._id)
-})
+const mapStateToProps = ({ currentUser }) => ({ currentUser })
 
-
-
-export default Navbar;
+export default connect(mapStateToProps, { signOut })(Navbar)
