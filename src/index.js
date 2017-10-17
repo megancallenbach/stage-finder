@@ -24,11 +24,11 @@ ReactDOM.render(
           <Route path="/sign-up" component={SignUp} />
           <Route path="/sign-in" component={SignIn} />
           <Route path="/artists" component={ArtistPage} />
-          <Route path="/stages" component={VenuePage} />
+          <Route path="/venues" component={VenuePage} />
           <Route path="/artists/:artistId" component={ArtistDetail} />
           <Route path="/artists/:artistId/profile" component={ArtistProfile} />
-          <Route path="/stages/:venueId" component={VenueDetail} />
-          <Route path="/stages/:venueId/profile" component={VenueProfile} />
+          <Route path="/venues/:venueId" component={VenueDetail} />
+          <Route path="/venues/:venueId/profile" component={VenueProfile} />
         </Route>
       </Router>
     </Provider>,
