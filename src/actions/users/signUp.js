@@ -1,0 +1,23 @@
+import API from '../../api'
+import signIn from './signIn'
+import { history } from '../../store'
+
+export const USER_SIGNED_UP = 'USER_SIGNED_UP'
+
+const api = new API()
+
+export default (user) => {
+  return (dispatch) => {
+    const backend = api.service('users')
+
+    backend.create(user)
+      .then((result) => {
+        console.log(result)
+        dispatch(signIn(user))
+        history.push("/")
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  }
+}
