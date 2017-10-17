@@ -6,14 +6,6 @@ import { Link } from 'react-router'
 import '../styles/Navbar.css'
 
 export class Navbar extends PureComponent {
-  // static propTypes = {
-  //   signedIn: PropTypes.bool.isRequired,
-  // }
-
-  // signOut(event) {
-  //   event.preventDefault()
-  //   this.props.signOut()
-  // }
 
   render() {
 
@@ -54,4 +46,4 @@ const mapStateToProps = ({ currentUser }) => ({
   signedIn: (!!currentUser && !!currentUser._id)
 })
 
-export default connect(mapStateToProps, {  })(Navbar)
+export default connect(mapStateToProps)(Navbar)
