@@ -14,6 +14,7 @@ import CreateArtistProfile from './pages/artist/CreateArtistProfile'
 import VenuePage from './pages/venue/VenuePage'
 import VenueDetail from './pages/venue/VenueDetail'
 import CreateVenueProfile from './pages/venue/CreateVenueProfile'
+import CreateProfile from './pages/CreateProfile'
 import App from './App'
 
 ReactDOM.render(
@@ -23,6 +24,7 @@ ReactDOM.render(
           <IndexRoute component={HomePage} />
           <Route path="/sign-up" component={SignUp} />
           <Route path="/sign-in" component={SignIn} />
+          <Route path="/create-profile" component={CreateProfile} />
           <Route path="/artists" component={ArtistPage} />
           <Route path="/create-artist" component={CreateArtistProfile} />
           <Route path="/artists/:artistId" component={ArtistDetail} />
