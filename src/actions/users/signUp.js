@@ -1,5 +1,6 @@
 import API from '../../api'
 import signIn from './signIn'
+import { history } from '../../store'
 
 export const USER_SIGNED_UP = 'USER_SIGNED_UP'
 
@@ -13,6 +14,7 @@ export default (user) => {
       .then((result) => {
         console.log(result)
         dispatch(signIn(user))
+        history.push("/")
       })
       .catch((error) => {
         console.error(error)
