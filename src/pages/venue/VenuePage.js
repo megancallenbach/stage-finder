@@ -19,6 +19,7 @@ class VenuePage extends PureComponent {
         </div>
         </div>
           <div className="venue-content">
+          <p className="venue-name">{venue.name}</p>
         <p className="venue-description">{venue.description}</p>
         <p className="venue-city">{venue.city}</p>
     </div>
