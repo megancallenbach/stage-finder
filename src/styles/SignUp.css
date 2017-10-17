@@ -1,0 +1,31 @@
+.btn-submit {
+  float: left;
+  color: white;
+  padding: 8px 25px;
+  background-color: #43A67C;
+  border: 1px solid #43A67C;
+  border-radius: 4px;
+  font-family: 'Montserrat Subrayada', sans-serif;
+  font-weight: 400;
+  font-size: 12px; }
+
+.formWrapper {
+  align-self: center;
+  margin: 20px;
+  max-width: 300px;
+  min-width: 300px;
+  color: white;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #FFFFFF;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.8); }
+
+.formItem {
+  margin: 5px; }
+
+Main {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  align-items: left; }
