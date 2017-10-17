@@ -11,14 +11,14 @@ export default class HomePage extends PureComponent {
               <h2 className="header-text">Iedereen verdient een eigen podium.</h2>
             </div>
             <div className="btn-container">
-              <button className="btn-green"><Link to={'/stages'} className="link">Find your stage</Link></button>
-              <button className="btn-transparent"><Link to={'/signup'} className="link">Create Profile</Link></button>
+              <button className="btn-green"><Link to={'/venues'} className="link">Find your stage</Link></button>
+              <button className="btn-transparent"><Link to={'/create-artist'} className="link">Create Profile</Link></button>
             </div>
           </div>
         <div className="two-columns row">
           <div className="image-two col-sm-6">
             <h3 className="white-text"> Heb jij het lef? </h3>
-            <button className="btn-orange"><Link to={'/stages'} className="link">Find your stage</Link></button>
+            <button className="btn-orange"><Link to={'/venues'} className="link">Find your stage</Link></button>
           </div>
           <div className="text-three col-sm-6">
             <h3 className="black-text"> Wij gunnen elke musikant het lef om op een podium te gaan staan. </h3>

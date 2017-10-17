@@ -1,12 +1,34 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import fetchArtists from '../../actions/artists/fetch'
+import '../../styles/ArtistDetail.css'
 
 class ArtistDetail extends PureComponent {
+  componentWillMount(){
+    this.props.fetchArtists()
+  }
+
   render() {
+    const artist = this.props.artists.find((artist) => artist._id === this.props.params.artistId)
+    if (!artist) return null
     return(
-      <h1>This will be the artist detail page</h1>
+      <div className="artist-detail">
+        <div className="artist-photo">
+          <img className="image-responsive" src={artist.photo} alt=""/>
+        </div>
+        <div className="row">
+          <div className="orange-box col-sm-6">
+            <h1 className="artist-name">{artist.name}</h1>
+            <p className="description">{artist.description}</p>
+          </div>
+          <div className="white-box col-sm-6">
+            <h1 className="upcoming">Upcoming</h1>
+          </div>
+        </div>
+      </div>
     )
   }
 }
+const mapStateToProps = ({ artists }) => ({ artists })
 
-export default connect()(ArtistDetail)
+export default connect(mapStateToProps, { fetchArtists })(ArtistDetail)
