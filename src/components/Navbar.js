@@ -1,14 +1,15 @@
 import React, { PureComponent } from 'react'
-// import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 // import signOut from '../actions/user/sign-out'
 import { Link } from 'react-router'
 import '../styles/Navbar.css'
 
+
 export class Navbar extends PureComponent {
   // static propTypes = {
   //   signedIn: PropTypes.bool.isRequired,
   // }
+
 
   // signOut(event) {
   //   event.preventDefault()
@@ -16,6 +17,8 @@ export class Navbar extends PureComponent {
   // }
 
   render() {
+
+
 
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-faded">
@@ -54,4 +57,6 @@ const mapStateToProps = ({ currentUser }) => ({
   signedIn: (!!currentUser && !!currentUser._id)
 })
 
-export default connect(mapStateToProps, {  })(Navbar)
+
+
+export default Navbar;
