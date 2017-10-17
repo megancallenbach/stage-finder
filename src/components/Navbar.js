@@ -47,7 +47,7 @@ class Navbar extends PureComponent {
         <div id="navbarNavDropdown" className="navbar-collapse collapse">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <Link to={'/stages'} className="nav-link">all stages</Link>
+              <Link to={'/venues'} className="nav-link">all stages</Link>
             </li>
             <li className="nav-item">
               <Link to={'/artists'} className="nav-link">all artists</Link>
