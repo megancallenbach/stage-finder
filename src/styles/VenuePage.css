@@ -64,3 +64,24 @@ img {
   background: rgba(0, 0, 0, 0.8);
   padding-left: 0px;
   float: left; }
+
+.btn-venue-even {
+  font-family: 'Montserrat Subrayada', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  padding: 10px 25px;
+  background-color: transparent;
+  border: 1px solid #F6903D;
+  border-radius: 4px;
+  margin-left: 20px; }
+
+.btn-venue-odd {
+  font-family: 'Montserrat Subrayada', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  padding: 10px 25px;
+  background-color: transparent;
+  border: 1px solid #F6903D;
+  border-radius: 4px;
+  margin-right: 20px;
+  float: right; }
