@@ -12,6 +12,7 @@ export default (user) => {
     api.signIn(user)
       .then((result) => {
         api.app.set('user', user)
+        debugger
         history.push('/')
         dispatch({
           type: USER_SIGNED_IN,

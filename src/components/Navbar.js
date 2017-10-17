@@ -2,9 +2,16 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import signOut from '../actions/users/signOut'
 import { Link } from 'react-router'
+import { push } from 'react-router-redux'
 import '../styles/Navbar.css'
 
 class Navbar extends PureComponent {
+
+  goToProfile(){
+    const { currentUser, push } = this.props
+
+    if(!currentUser.artistProfileId && !currentUser.venueProfileId) push("/create-profile")
+  }
 
   signOutUser(){
     this.props.signOut()
@@ -18,6 +25,11 @@ class Navbar extends PureComponent {
         <li className="nav-item">
           <span className="nav-link" onClick={this.signOutUser.bind(this)}>
             log out
+          </span>
+        </li>
+        <li className="nav-item">
+          <span className="nav-link" onClick={this.goToProfile.bind(this)}>
+            my profile
           </span>
         </li>
       </ul>
@@ -65,4 +77,4 @@ class Navbar extends PureComponent {
 const mapStateToProps = ({ currentUser }) => ({ currentUser })
 
 
-export default connect(mapStateToProps, { signOut })(Navbar)
+export default connect(mapStateToProps, { signOut, push })(Navbar)

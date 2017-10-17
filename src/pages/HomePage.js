@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react'
+import { connect } from 'react-redux'
 import '../styles/HomePage.css'
 import { Link } from 'react-router'
 
-export default class HomePage extends PureComponent {
+class HomePage extends PureComponent {
   render() {
     return (
       <div className="home-page">
@@ -27,10 +28,11 @@ export default class HomePage extends PureComponent {
             <button className="btn-white"><Link to={'/inspiration'} className="link">Inspiration</Link></button>
           </div>
         </div>
-
-
-
       </div>
     )
   }
 }
+
+const mapStateToProps = ({ currentUser }) => ({ currentUser })
+
+export default connect(mapStateToProps)(HomePage)
