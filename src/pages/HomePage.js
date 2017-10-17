@@ -8,7 +8,6 @@ export default class HomePage extends PureComponent {
     return (
       <div className="home-page">
         <div className="header-bg">
-          <Navbar />
           <div className="jumbotron">
             <div className="text-container">
               <h2 className="header-text">Iedereen verdient een eigen podium.</h2>
@@ -20,7 +19,6 @@ export default class HomePage extends PureComponent {
           </div>
         </div>
       </div>
-
     )
   }
 }
