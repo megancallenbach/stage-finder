@@ -5,7 +5,7 @@ li {
   text-align: right; }
 
 .bg-faded {
-  background-color: transparent; }
+  background-color: rgba(0, 0, 0, 0.3); }
 
 .navbar-light .navbar-brand {
   font-family: 'Montserrat Subrayada', sans-serif;
@@ -20,7 +20,7 @@ li {
 
 .navbar-light .navbar-nav .nav-link {
   color: white;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 17px; }
 
 .navbar-light .navbar-nav .nav-link:hover {
