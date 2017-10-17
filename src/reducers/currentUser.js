@@ -1,6 +1,7 @@
 import { USER_SIGNED_IN } from '../actions/users/signIn'
 import { USER_SIGNED_OUT } from '../actions/users/signOut'
 import { ARTIST_CREATED } from '../actions/artists/create'
+import { ARTIST_UPDATED } from '../actions/artists/update'
 import { VENUE_CREATED } from '../actions/venues/create'
 
 const currentUserKey = 'currentUser-evaluation-app'
@@ -22,6 +23,9 @@ export default (state = currentUserFromLocalStorage, { type, payload } = {}) => 
     case ARTIST_CREATED :
       const artistProfile = payload
       return { ...state, artistProfileId: artistProfile._id, artistProfile: artistProfile }
+
+    case ARTIST_UPDATED :
+      return { ...state, artistProfile: payload }
 
     case VENUE_CREATED :
       const venueProfile = payload

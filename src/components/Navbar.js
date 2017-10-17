@@ -11,6 +11,7 @@ class Navbar extends PureComponent {
     const { currentUser, push } = this.props
 
     if(!currentUser.artistProfileId && !currentUser.venueProfileId) push("/create-profile")
+    if(currentUser.artistProfileId) push(`/artists/${currentUser.artistProfileId}/edit`)
   }
 
   signOutUser(){
