@@ -18,7 +18,7 @@ class Navbar extends PureComponent {
       <ul className="navbar-nav">
         <li className="nav-item">
           <Link className="nav-link" onClick={this.signOutUser.bind(this)}>
-            sign out
+            log out
           </Link>
         </li>
       </ul>
