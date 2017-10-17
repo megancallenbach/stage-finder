@@ -32,7 +32,7 @@ ReactDOM.render(
           <Route path="/artists/:artistId/edit" component={EditArtistProfile} />
           <Route path="/venues" component={VenuePage} />
           <Route path="/create-venue" component={CreateVenueProfile} />
-          <Route path="/stages/:venueId" component={VenueDetail} />
+          <Route path="/venues/:venueId" component={VenueDetail} />
         </Route>
       </Router>
     </Provider>,

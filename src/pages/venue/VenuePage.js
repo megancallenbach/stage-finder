@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import fetchVenues from '../../actions/venues/fetch'
 import '../../styles/VenuePage.css'
+import { Link } from 'react-router'
 
 class VenuePage extends PureComponent {
 
@@ -17,10 +18,11 @@ class VenuePage extends PureComponent {
               <img src={venue.photo} alt="" />
             </div>
             </div>
-              <div className="venue-content">
-              <p className="venue-name">{venue.name}</p>
-            <p className="venue-description">{venue.description}</p>
-            <p className="venue-city">{venue.city}</p>
+              <div className="venue-content-even">
+              <p className="venue-name-even">{venue.name}</p>
+              <p className="venue-city-even">{venue.city}</p>
+            <p className="venue-description-even">{venue.description}</p>
+            <button className="btn-venue-even"><Link to={`/venues/${venue._id}`} className="link">View Venue</Link></button>
         </div>
       </div>
  )
@@ -31,10 +33,11 @@ class VenuePage extends PureComponent {
               <img src={venue.photo} alt="" />
             </div>
             </div>
-              <div className="venue-content">
-              <p className="venue-name">{venue.name}</p>
-            <p className="venue-description">{venue.description}</p>
-            <p className="venue-city">{venue.city}</p>
+              <div className="venue-content-odd">
+              <p className="venue-name-odd">{venue.name}</p>
+            <p className="venue-city-odd">{venue.city}</p>
+            <p className="venue-description-odd">{venue.description}</p>
+            <button className="btn-venue-odd"><Link to={`/venues/${venue._id}`} className="link">View Venue</Link></button>
         </div>
       </div>
     )
