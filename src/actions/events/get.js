@@ -1,6 +1,6 @@
 import API from '../../api'
 
-export const GET_EVENTS = 'GET_EVENTS'
+export const GET_EVENT = 'GET_EVENT'
 
 const api = new API()
 
@@ -9,11 +9,11 @@ export default (eventId) => {
 
     const backend = api.service('events')
 
-    backend.find(eventId)
+    backend.get(eventId)
       .then((result) => {
         console.log(result)
         dispatch({
-          type: GET_EVENTS,
+          type: GET_EVENT,
           payload: result
         });
       })

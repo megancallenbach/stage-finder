@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import fetchEvents from '../../actions/events/fetch'
+import getEvent from '../../actions/events/get'
 import { Link } from 'react-router'
 import '../../styles/EventDetail.css'
 import artistJoinEvent from '../../actions/artists/join'
@@ -10,12 +10,12 @@ import Footer from '../../components/Footer'
 class EventDetail extends PureComponent {
 
   componentWillMount(){
-    this.props.fetchEvents()
+    this.props.getEvent(this.props.params.eventId)
   }
 
   joinEvent(){
     const artistId = this.props.currentUser.artistProfileId
-    const eventId = this.props.params.eventId
+    const eventId = this.props.currentEvent._id
     this.props.artistJoinEvent(artistId, eventId)
   }
 
@@ -24,24 +24,24 @@ class EventDetail extends PureComponent {
   }
 
   render() {
-    const event = this.props.events.find((event) => event._id === this.props.params.eventId)
+    const { currentEvent } = this.props
 
-    if (!event) return null
+    if (!currentEvent) return null
+    debugger
+    const artists = [].concat(currentEvent.artists)
+    const artistCount = (currentEvent.artistCount - artists.length)
 
-    const artists = [].concat(event.artists)
-    const artistCount = (event.artistCount - event.artistIds.length)
-    
     return(
       <div className="event-detail">
         <Navbar />
         <div className="event-photo">
-          <img className="image-responsive" src={(event.photo) ? event.photo : event.venue.photo} alt=""/>
+          <img className="image-responsive" src={(currentEvent.photo) ? currentEvent.photo : currentEvent.venue.photo} alt=""/>
         </div>
         <div className="row">
           <div className="orange-box col-sm-6">
-            <h1 className="event-name">{event.title}</h1>
-            <h1 className="event-name">{event.venue.address}, {event.venue.city}</h1>
-            <p className="description">{event.description}</p>
+            <h1 className="event-name">{currentEvent.title}</h1>
+            <h1 className="event-name">{currentEvent.venue.address}, {currentEvent.venue.city}</h1>
+            <p className="description">{currentEvent.description}</p>
           </div>
           <div className="white-box col-sm-6">
             <h1 className="upcoming">Artiesten</h1>
@@ -55,6 +55,6 @@ class EventDetail extends PureComponent {
     )
   }
 }
-const mapStateToProps = ({ events, currentUser }) => ({ events, currentUser })
+const mapStateToProps = ({ currentEvent, currentUser }) => ({ currentEvent, currentUser })
 
-export default connect(mapStateToProps, { fetchEvents, artistJoinEvent })(EventDetail)
+export default connect(mapStateToProps, { getEvent, artistJoinEvent })(EventDetail)
