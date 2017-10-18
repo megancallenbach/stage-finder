@@ -10,14 +10,11 @@ class Footer extends PureComponent {
     return (
       <div className="footer-container">
         <div className="footer">
-          <Link to={'/contact'} className='link'>Contact</Link>
-          <br />
-          <Link to={'/frequentlyaskedquestions'} className='link'>Veelgestelde vragen</Link>
-          <br />
-          <Link to={'/about'} className='link'>Over ons</Link>
+          <Link to={'/contact'} className='footer-link'>Contact</Link>
+          <Link to={'/faq'} className='footer-link'>Veelgestelde vragen</Link>
+          <Link to={'/about'} className='footer-link'>Over ons</Link>
+          <p className="footer-text"> &copy; 2017 StageFinder </p>
         </div>
-        
-
       </div>
     )
   }

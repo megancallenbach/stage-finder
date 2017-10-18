@@ -12,7 +12,7 @@ class ArtistPage extends PureComponent {
 
   renderArtist(artist){
     return (
-      <div className="artist col-sm-4">
+      <div className="artist col-md-4 col-sm-6">
         <h2 className="artist-name">{artist.name}</h2>
         <div className="artist-box">
           <div className="artist-image">

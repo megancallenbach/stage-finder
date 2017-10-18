@@ -8,8 +8,10 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-        {this.props.children}
-        <Footer />
+        <div className="scroll">  
+          {this.props.children}
+          <Footer />
+        </div>
       </div>
     );
   }
