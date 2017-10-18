@@ -1,6 +1,7 @@
 import API from '../../api'
 
 export const ARTIST_UPDATED = 'ARTIST_UPDATED'
+const PROFILE_UPDATE = 'PROFILE_UPDATE'
 
 const api = new API()
 
@@ -11,7 +12,7 @@ export default (artistId, artistData) => {
 
     api.authenticate()
       .then(() => {
-        backend.patch(artistId, artistData)
+        backend.patch(artistId, { type: PROFILE_UPDATE, payload: artistData})
           .then((result) => {
             console.log(result)
                 dispatch({
