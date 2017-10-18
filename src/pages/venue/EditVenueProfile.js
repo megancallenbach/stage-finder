@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import updateVenue from '../../actions/venues/update'
+import Navbar from '../../components/Navbar'
 import '../../styles/Form.css'
 
 class EditVenueProfile extends PureComponent {
@@ -28,6 +29,8 @@ class EditVenueProfile extends PureComponent {
     if(!currentUser) return null
     return (
       <div className="background">
+      < Navbar />
+      <br />
         <div className="wrapper venue-profile">
           <h1>Update Your Venue Profile</h1>
           <form onSubmit={this.submitForm.bind(this)}>
@@ -89,7 +92,9 @@ class EditVenueProfile extends PureComponent {
 
             <input className="btn-submit formItem" type="submit" value="Update" />
           </form>
+
         </div>
+        <br />
       </div>
     )
   }

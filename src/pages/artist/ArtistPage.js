@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import fetchArtists from '../../actions/artists/fetch'
 import '../../styles/ArtistPage.css'
 import { Link } from 'react-router'
+import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
 
 class ArtistPage extends PureComponent {
 
@@ -36,14 +38,19 @@ class ArtistPage extends PureComponent {
     const artists = this.props.artists
     if (!artists) return null
     return(
-      <div>
-        <h1>Discover the artists</h1>
-        <div className="artists-container">
-          <div className="row">
-            { artists.map(this.renderArtist.bind(this)) }
+      <div className="artist-page">
+        <Navbar />
+        <div className="scroll">
+          <h1 className="title">Discover the artists</h1>
+          <div className="artists-container">
+            <div className="row">
+              { artists.map(this.renderArtist.bind(this)) }
+            </div>
           </div>
+          <Footer/>
         </div>
       </div>
+
     )
   }
 }

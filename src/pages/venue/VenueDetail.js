@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import fetchVenues from '../../actions/venues/fetch'
 import '../../styles/VenueDetail.css'
+import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
 
 class VenueDetail extends PureComponent {
   componentWillMount(){
@@ -13,6 +15,7 @@ class VenueDetail extends PureComponent {
     if (!venue) return null
     return(
       <div className="venue-detail">
+        <Navbar/>
         <div className="venue-photo">
           <img className="image-responsive" src={venue.photo} alt=""/>
         </div>
@@ -25,6 +28,7 @@ class VenueDetail extends PureComponent {
             <h1 className="upcoming">Upcoming</h1>
           </div>
         </div>
+        <Footer />
       </div>
     )
   }

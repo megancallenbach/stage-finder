@@ -4,7 +4,8 @@ import fetchEvents from '../../actions/events/fetch'
 import { Link } from 'react-router'
 import '../../styles/EventDetail.css'
 import artistJoinEvent from '../../actions/artists/join'
-
+import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
 
 class EventDetail extends PureComponent {
 
@@ -32,6 +33,7 @@ class EventDetail extends PureComponent {
     
     return(
       <div className="event-detail">
+        <Navbar />
         <div className="event-photo">
           <img className="image-responsive" src={(event.photo) ? event.photo : event.venue.photo} alt=""/>
         </div>
@@ -48,6 +50,7 @@ class EventDetail extends PureComponent {
             { (artists) ? artists.map(this.renderArtist.bind(this)) : null }
           </div>
         </div>
+        <Footer />
       </div>
     )
   }

@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import fetchArtists from '../../actions/artists/fetch'
 import '../../styles/ArtistDetail.css'
+import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
 
 class ArtistDetail extends PureComponent {
   componentWillMount(){
@@ -13,6 +15,7 @@ class ArtistDetail extends PureComponent {
     if (!artist) return null
     return(
       <div className="artist-detail">
+        <Navbar />
         <div className="artist-photo">
           <img className="image-responsive" src={artist.photo} alt=""/>
         </div>
@@ -25,6 +28,7 @@ class ArtistDetail extends PureComponent {
             <h1 className="upcoming">Upcoming</h1>
           </div>
         </div>
+        <Footer />
       </div>
     )
   }

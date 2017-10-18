@@ -1,3 +1,9 @@
+.venue-page {
+  background-image: url("../images/bg8.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%; }
+
 .venue-even {
   display: flex;
   font-size: 20px;
@@ -85,3 +91,6 @@ img {
   border-radius: 4px;
   margin-right: 20px;
   float: right; }
+
+.create-venue {
+  height: 100vh; }
