@@ -6,11 +6,13 @@ import '../../styles/EventDetail.css'
 import artistJoinEvent from '../../actions/artists/join'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
+import getCurrentUser from '../../actions/users/get'
 
 class EventDetail extends PureComponent {
 
   componentWillMount(){
     this.props.getEvent(this.props.params.eventId)
+    if(this.props.currentUser)this.props.getCurrentUser(this.props.currentUser._id)
   }
 
   joinEvent(){
@@ -19,15 +21,27 @@ class EventDetail extends PureComponent {
     this.props.artistJoinEvent(artistId, eventId)
   }
 
-  renderArtist(artist){
-    return <Link to={`/artists/${artist._id}`}>{artist.name}</Link>
+  renderArtist(artist, index){
+    return (
+      <div className="artist-item" id={index}>
+        <h3>{artist.name}</h3>
+        <p>{artist.description}</p>
+        <Link to={`/artists/${artist._id}`} className="artist-link">Read more</Link>
+      </div>
+    )
+  }
+
+  renderArtistCount(artistCount){
+    if (artistCount > 1) return <p className="artist-count">We zoeken nog {artistCount} artiesten!</p>
+    else if (artistCount === 1) return <p className="artist-count">We zoeken nog {artistCount} artiest!</p>
+    else return null
   }
 
   render() {
     const { currentEvent } = this.props
 
     if (!currentEvent) return null
-    
+
     const artists = [].concat(currentEvent.artists)
     const artistCount = (currentEvent.artistCount - artists.length)
 
@@ -44,10 +58,20 @@ class EventDetail extends PureComponent {
             <p className="description">{currentEvent.description}</p>
           </div>
           <div className="white-box col-sm-6">
-            <h1 className="upcoming">Artiesten</h1>
-            <p className="artist-count">We zoeken nog {artistCount} artiesten!</p>
-            { (this.props.currentUser.artistProfileId) ? <button onClick={this.joinEvent.bind(this)}>Join!</button> : null }
-            { (artists) ? artists.map(this.renderArtist.bind(this)) : null }
+            <div className="row">
+              <div className="artists-header col-sm-6">
+                <h1 className="upcoming">Artiesten</h1>
+                <p className="artist-count">We zoeken nog {artistCount} artiesten!</p>
+              </div>
+              <div className="artists-button col-sm-6">
+              { (this.props.currentUser.artistProfileId) ? <span className="join-button" onClick={this.joinEvent.bind(this)}>Join!</span> : null }
+              </div>
+            </div>
+            <div className="row">
+              <div className="artists-wrapper col-sm-12">
+                { (artists) ? artists.map(this.renderArtist.bind(this)) : null }
+              </div>
+            </div>
           </div>
         </div>
         <Footer />
@@ -57,4 +81,4 @@ class EventDetail extends PureComponent {
 }
 const mapStateToProps = ({ currentEvent, currentUser }) => ({ currentEvent, currentUser })
 
-export default connect(mapStateToProps, { getEvent, artistJoinEvent })(EventDetail)
+export default connect(mapStateToProps, { getEvent, artistJoinEvent, getCurrentUser })(EventDetail)
