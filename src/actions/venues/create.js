@@ -1,4 +1,6 @@
 import API from '../../api'
+import { history } from '../../store'
+
 
 export const VENUE_CREATED = 'VENUE_CREATED'
 
@@ -18,6 +20,8 @@ export default (venueData) => {
               type: VENUE_CREATED,
               payload: result
             })
+            history.push('/')
+
           })
           .catch((error) => {
             console.log(error)

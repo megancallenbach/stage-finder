@@ -158,7 +158,7 @@ class EditArtistProfile extends PureComponent {
                   defaultValue={currentUser.artistProfile.facebook}/>
               </div>
             </div>
-            <input className="btn-submit formItem" type="submit" value="Submit" />
+            <input className="btn-submit formItem" type="submit" value="Update" />
           </form>
         </div>
       </div>
