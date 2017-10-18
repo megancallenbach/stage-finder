@@ -12,6 +12,7 @@ class Navbar extends PureComponent {
 
     if(!currentUser.artistProfileId && !currentUser.venueProfileId) push("/create-profile")
     if(currentUser.artistProfileId) push(`/artists/${currentUser.artistProfileId}/edit`)
+    if(currentUser.venueProfileId) push(`/venues/${currentUser.venueProfileId}/edit`)
   }
 
   signOutUser(){
