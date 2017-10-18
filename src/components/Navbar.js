@@ -3,9 +3,14 @@ import { connect } from 'react-redux'
 import signOut from '../actions/users/signOut'
 import { Link } from 'react-router'
 import { push } from 'react-router-redux'
+import getCurrentUser from '../actions/users/get'
 import '../styles/Navbar.css'
 
 class Navbar extends PureComponent {
+
+  componentWillMount(){
+    if(this.props.currentUser) this.props.getCurrentUser(this.props.currentUser._id)
+  }
 
   goToProfile(){
     const { currentUser, push } = this.props
@@ -79,4 +84,4 @@ class Navbar extends PureComponent {
 const mapStateToProps = ({ currentUser }) => ({ currentUser })
 
 
-export default connect(mapStateToProps, { signOut, push })(Navbar)
+export default connect(mapStateToProps, { signOut, push, getCurrentUser })(Navbar)
