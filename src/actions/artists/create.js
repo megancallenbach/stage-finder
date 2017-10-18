@@ -1,4 +1,6 @@
 import API from '../../api'
+import { history } from '../../store'
+
 
 export const ARTIST_CREATED = 'ARTIST_CREATED'
 
@@ -17,7 +19,10 @@ export default (artistData) => {
             dispatch({
               type: ARTIST_CREATED,
               payload: result
+
             })
+            history.push('/')
+
           })
           .catch((error) => {
             console.log(error)

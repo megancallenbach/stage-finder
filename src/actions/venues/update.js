@@ -1,26 +1,25 @@
 import API from '../../api'
 import { history } from '../../store'
 
-export const ARTIST_UPDATED = 'ARTIST_UPDATED'
-const PROFILE_UPDATE = 'PROFILE_UPDATE'
+export const VENUE_UPDATED = 'VENUE_UPDATED'
 
 const api = new API()
 
-export default (artistId, artistData) => {
+export default (venueId, venueData) => {
   return (dispatch) => {
 
-    const backend = api.service('artists')
+    const backend = api.service('venues')
 
     api.authenticate()
       .then(() => {
-        backend.patch(artistId, { type: PROFILE_UPDATE, payload: artistData})
+        backend.patch(venueId, venueData)
           .then((result) => {
             console.log(result)
                 dispatch({
-                  type: ARTIST_UPDATED,
+                  type: VENUE_UPDATED,
                   payload: result
                 })
-                history.push(`/artists/${artistId}`)
+                history.push(`/venues/${venueId}`)
               })
           .catch((error) => {
             console.log(error)
