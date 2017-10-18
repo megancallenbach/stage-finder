@@ -7,6 +7,7 @@
     "feathers-authentication-client": "^0.3.3",
     "feathers-hooks": "^2.1.0",
     "feathers-rest": "^1.8.0",
+    "material-ui": "^0.19.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
