@@ -1,28 +1,23 @@
 import API from '../../api'
-import { history } from '../../store'
 
-
-export const ARTIST_CREATED = 'ARTIST_CREATED'
+export const EVENT_CREATED = 'EVENT_CREATED'
 
 const api = new API()
 
-export default (artistData) => {
+export default (eventData) => {
   return (dispatch) => {
 
-    const backend = api.service('artists')
+    const backend = api.service('events')
 
     api.app.authenticate()
       .then(() => {
-        backend.create(artistData)
+        backend.create(eventData)
           .then((result) => {
             console.log(result)
             dispatch({
-              type: ARTIST_CREATED,
+              type: EVENT_CREATED,
               payload: result
-
             })
-            history.push('/')
-
           })
           .catch((error) => {
             console.log(error)
