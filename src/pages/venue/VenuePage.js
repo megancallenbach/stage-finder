@@ -59,8 +59,8 @@ class VenuePage extends PureComponent {
               { venues.map(this.renderVenue.bind(this)) }
             </div>
           </div>
+          <Footer />
         </div>
-        <Footer />
       </div>
     )
   }
