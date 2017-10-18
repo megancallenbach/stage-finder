@@ -1,15 +1,16 @@
-.header-bg {
-  background-image: url("../images/header1.jpg");
+.home-page {
+  background-image: url("../images/bg1.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   width: 100%;
-  height: 700px;
+  height: 100vh;
   background-size: cover; }
 
 .jumbotron {
   background-color: transparent;
-  height: 550px; }
+  height: 75%;
+  margin-bottom: 0; }
 
 .header-text {
   color: white;
