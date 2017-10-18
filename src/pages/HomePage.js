@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import '../styles/HomePage.css'
 import { Link } from 'react-router'
 import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
 
 class HomePage extends PureComponent {
   render() {
@@ -31,7 +30,7 @@ class HomePage extends PureComponent {
           // </div>
 
           // < Footer />
-        } 
+        }
       </div>
     )
   }

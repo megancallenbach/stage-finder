@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import createVenue from '../../actions/venues/create'
 import '../../styles/Form.css'
+import Navbar from '../../components/Navbar'
 
 class CreateVenueProfile extends PureComponent {
   constructor() {
@@ -25,7 +26,8 @@ class CreateVenueProfile extends PureComponent {
   render() {
     if(!this.props.currentUser) return null
     return (
-      <div className="background">
+      <div className="create-venue">
+        < Navbar />
         <div className="wrapper artist-profile">
           <h1>Create Your Venue Profile</h1>
           <form onSubmit={this.submitForm.bind(this)}>

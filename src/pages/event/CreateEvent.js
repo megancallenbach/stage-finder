@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import createEvent from '../../actions/events/create'
 import DatePicker from 'material-ui/DatePicker';
 import '../../styles/Form.css'
+import Navbar from '../../components/Navbar'
 
 class CreateEvent extends PureComponent {
   constructor() {
@@ -29,6 +30,7 @@ class CreateEvent extends PureComponent {
     if(!this.props.currentUser.venueProfileId) return null
     return (
       <div className="background">
+        <Navbar />
         <div className="wrapper artist-profile">
           <h1>Create An Event</h1>
           <form onSubmit={this.submitForm.bind(this)}>
