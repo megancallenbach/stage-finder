@@ -27,7 +27,7 @@ class EventDetail extends PureComponent {
     const { currentEvent } = this.props
 
     if (!currentEvent) return null
-    debugger
+    
     const artists = [].concat(currentEvent.artists)
     const artistCount = (currentEvent.artistCount - artists.length)
 

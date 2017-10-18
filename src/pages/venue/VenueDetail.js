@@ -7,7 +7,7 @@ import getVenue from '../../actions/venues/get'
 
 class VenueDetail extends PureComponent {
   componentWillMount(){
-    debugger
+    
     this.props.getVenue(this.props.params.venueId)
   }
 
