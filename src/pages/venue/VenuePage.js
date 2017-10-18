@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import fetchVenues from '../../actions/venues/fetch'
 import '../../styles/VenuePage.css'
 import { Link } from 'react-router'
+import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
 
 class VenuePage extends PureComponent {
 
@@ -48,13 +50,17 @@ class VenuePage extends PureComponent {
     if (!venues) return null
 
     return(
-      <div>
-        <h1>Discover the Venues</h1>
-        <div className="venues-container">
-          <div className="row">
-            { venues.map(this.renderVenue.bind(this)) }
+      <div className="venue-page">
+        <Navbar />
+        <div className="scroll">
+          <h1>Discover the Venues</h1>
+          <div className="venues-container">
+            <div className="row">
+              { venues.map(this.renderVenue.bind(this)) }
+            </div>
           </div>
         </div>
+        <Footer />
       </div>
     )
   }
