@@ -4,6 +4,7 @@ import venues from './venues'
 import events from './events'
 import currentVenue from './currentVenue'
 import currentEvent from './currentEvent'
+import currentArtist from './currentArtist'
 
 export default {
   artists,
@@ -12,4 +13,5 @@ export default {
   currentUser,
   currentVenue,
   currentEvent,
+  currentArtist,
 }
