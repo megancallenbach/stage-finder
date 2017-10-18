@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import fetchEvents from '../../actions/events/fetch'
 import { Link } from 'react-router'
 import '../../styles/EventDetail.css'
+import artistJoinEvent from '../../actions/artists/join'
+
 
 class EventDetail extends PureComponent {
 
@@ -11,11 +13,13 @@ class EventDetail extends PureComponent {
   }
 
   joinEvent(){
-
+    const artistId = this.props.currentUser.artistProfileId
+    const eventId = this.props.params.eventId
+    this.props.artistJoinEvent(artistId, eventId)
   }
 
   renderArtist(artist){
-    return <Link to={`/artists/${artist._id}`}>artist.name</Link>
+    return <Link to={`/artists/${artist._id}`}>{artist.name}</Link>
   }
 
   render() {
@@ -23,9 +27,9 @@ class EventDetail extends PureComponent {
 
     if (!event) return null
 
-    const artists = event.artists
+    const artists = [].concat(event.artists)
     const artistCount = (event.artistCount - event.artistIds.length)
-
+    
     return(
       <div className="event-detail">
         <div className="event-photo">
@@ -50,4 +54,4 @@ class EventDetail extends PureComponent {
 }
 const mapStateToProps = ({ events, currentUser }) => ({ events, currentUser })
 
-export default connect(mapStateToProps, { fetchEvents })(EventDetail)
+export default connect(mapStateToProps, { fetchEvents, artistJoinEvent })(EventDetail)
