@@ -4,6 +4,7 @@ import fetchEvents from '../../actions/events/fetch'
 import '../../styles/EventDetail.css'
 
 class EventDetail extends PureComponent {
+
   componentWillMount(){
     this.props.fetchEvents()
   }
@@ -14,7 +15,7 @@ class EventDetail extends PureComponent {
     return(
       <div className="event-detail">
         <div className="event-photo">
-          <img className="image-responsive" src={event.photo} alt=""/>
+          <img className="image-responsive" src={(event.photo) ? event.photo : event.venue.photo} alt=""/>
         </div>
         <div className="row">
           <div className="orange-box col-sm-6">
