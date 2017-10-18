@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import fetchEvents from '../../actions/events/fetch'
 import '../../styles/EventDetail.css'
+import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
 
 class EventDetail extends PureComponent {
   componentWillMount(){
@@ -13,6 +15,7 @@ class EventDetail extends PureComponent {
     if (!event) return null
     return(
       <div className="event-detail">
+        <Navbar />
         <div className="event-photo">
           <img className="image-responsive" src={event.photo} alt=""/>
         </div>
@@ -25,6 +28,7 @@ class EventDetail extends PureComponent {
             <h1 className="upcoming">Upcoming</h1>
           </div>
         </div>
+        <Footer />
       </div>
     )
   }
