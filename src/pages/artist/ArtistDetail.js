@@ -12,6 +12,7 @@ class ArtistDetail extends PureComponent {
 
   render() {
     if (!this.props.currentArtist) return null
+    const artist = this.props.currentArtist
     return(
       <div className="artist-detail">
         <Navbar />
