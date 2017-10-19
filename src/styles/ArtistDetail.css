@@ -1,3 +1,7 @@
+.artist-detail .row {
+  padding: 0;
+  margin: 0; }
+
 .artist-detail .artist-contents {
   width: 80%;
   margin: 30px auto; }
