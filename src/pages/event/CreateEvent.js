@@ -4,11 +4,16 @@ import createEvent from '../../actions/events/create'
 import DatePicker from 'material-ui/DatePicker';
 import '../../styles/Form.css'
 import Navbar from '../../components/Navbar'
+import getCurrentUser from '../../actions/users/get'
 
 class CreateEvent extends PureComponent {
   constructor() {
     super()
     this.state = {}
+  }
+
+  componentWillMount() {
+    if (this.props.currentUser) this.props.getCurrentUser(this.props.currentUser._id)
   }
 
   submitForm(event){
@@ -111,4 +116,4 @@ class CreateEvent extends PureComponent {
 
 const mapStateToProps = ({ currentUser }) => ({ currentUser })
 
-export default connect(mapStateToProps, { createEvent })(CreateEvent)
+export default connect(mapStateToProps, { createEvent, getCurrentUser })(CreateEvent)
