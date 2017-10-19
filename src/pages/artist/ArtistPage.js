@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import fetchArtists from '../../actions/artists/fetch'
 import '../../styles/ArtistPage.css'
 import { Link } from 'react-router'
-import {Icon} from 'react-fontawesome'
+// import { Icon } from 'react-fontawesome'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 
