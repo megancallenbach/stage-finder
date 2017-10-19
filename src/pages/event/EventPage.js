@@ -21,7 +21,7 @@ class EventPage extends PureComponent {
 
           <div className="event-content">
             <div className="event-date">
-              <h3 className="date">{event.date.toString().slice(0,10)}</h3>
+              <h3 className="date">{event.date}</h3>
             </div>
             <div className="event-city">
               <h4 className="city">{event.venue.name}</h4>
