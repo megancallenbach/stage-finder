@@ -25,6 +25,33 @@
   padding: 50px; }
   .event-detail .white-box .upcoming {
     font-size: 30px;
-    font-family: 'Montserrat Subrayada', sans-serif;
-    color: #111;
+    color: #000;
     text-align: left; }
+  .event-detail .white-box .artists-header {
+    display: flex;
+    flex-direction: column; }
+  .event-detail .white-box .artists-button .join-button {
+    float: left;
+    padding: 20px;
+    margin: 20px;
+    background-color: #43A67C;
+    border: 1px solid #43A67C;
+    border-radius: 4px;
+    font-weight: 400;
+    color: white;
+    width: 100px;
+    text-align: center;
+    font-size: 20px; }
+  .event-detail .white-box .artists-wrapper {
+    display: flex;
+    flex-direction: row; }
+    .event-detail .white-box .artists-wrapper .artist-item {
+      padding: 5px;
+      margin: 5px;
+      width: 200px;
+      border-style: solid;
+      border-color: #000;
+      border-width: 1px;
+      border-radius: 5px; }
+  .event-detail .white-box p, .event-detail .white-box h3 {
+    color: #000; }

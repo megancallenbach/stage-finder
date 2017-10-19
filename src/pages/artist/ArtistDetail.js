@@ -1,18 +1,17 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import fetchArtists from '../../actions/artists/fetch'
 import '../../styles/ArtistDetail.css'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
+import getArtist from '../../actions/artists/get'
 
 class ArtistDetail extends PureComponent {
   componentWillMount(){
-    this.props.fetchArtists()
+    this.props.getArtist(this.props.params.artistId)
   }
 
   render() {
-    const artist = this.props.artists.find((artist) => artist._id === this.props.params.artistId)
-    if (!artist) return null
+    if (!this.props.currentArtist) return null
     return(
       <div className="artist-detail">
         <Navbar />
@@ -40,6 +39,6 @@ class ArtistDetail extends PureComponent {
     )
   }
 }
-const mapStateToProps = ({ artists }) => ({ artists })
+const mapStateToProps = ({ currentArtist }) => ({ currentArtist })
 
-export default connect(mapStateToProps, { fetchArtists })(ArtistDetail)
+export default connect(mapStateToProps, { getArtist })(ArtistDetail)

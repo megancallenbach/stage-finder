@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import createArtist from '../../actions/artists/create'
+import Navbar from '../../components/Navbar'
 import '../../styles/Form.css'
 
 class CreateArtistProfile extends PureComponent {
@@ -32,6 +33,7 @@ class CreateArtistProfile extends PureComponent {
     if(!this.props.currentUser) return null
     return (
       <div className="background">
+      < Navbar />
         <div className="wrapper artist-profile">
           <h1>Create Your Artist Profile</h1>
           <form onSubmit={this.submitForm.bind(this)}>
