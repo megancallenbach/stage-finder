@@ -12,9 +12,9 @@ class ArtistPage extends PureComponent {
     this.props.fetchArtists()
   }
 
-  renderArtist(artist){
+  renderArtist(artist, index){
     return (
-      <div className="artist col-md-4 col-sm-6">
+      <div key={index} className="artist col-md-4 col-sm-6">
         <h2 className="artist-name">{artist.name}</h2>
         <div className="artist-box">
           <div className="artist-image">

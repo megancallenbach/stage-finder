@@ -3,75 +3,63 @@
   background-repeat: no-repeat
   background-size: cover
   width: 100%
+  .row
+    padding: 0
+    margin: 0
 
-.venue-even
-  display: flex
+  .venues-container
+    width: 80%
+    margin: 0 auto
+
+  i
+    padding: 0 10px
+
+.venue
   font-size: 20px
-  width: 700px
-  height: 485px
+  width: 100%
+  height: 350px
   border-radius: 4px
   padding: 0px
-  justify-content: center
 
-.venue-odd
-  display: flex
-  font-size: 20px
-  width: 700px
-  height: 485px
-  border-radius: 4px
-  padding: 0px
-  justify-content: center
-  flex-direction: row-reverse
+.col-md-7
+  padding: 0
+.col-md-5
+  padding: 0
 
 img
-  display: flex
-  width: 650px
-  height: 485px
-  flex-direction: column
+  width: 100%
+  height: 350px
   padding-right: 0px
 
-.venue-name-even
+.venue-name
   padding: 20px
-  font-size: 40px
+  font-size: 30px
+  height: 80px
   font-family: 'Montserrat Subrayada', sans-serif
 
-.venue-description-even
-  display: flex
-  width: 650px
-  flex-direction: column
-  padding: 20px
+.venue-description
+  padding: 0 20px
+  height: 93px
+  overflow: hidden
 
-.venue-city-even
-  padding: 20px
+.venue-city
+  padding: 0 20px
 
-.venue-city-odd
-   padding: 20px
-   text-align: right
+.upcoming-events
+  padding: 0 20px
+  font-size: 15px
 
 .venue-content-even
-  background: transparentize(#000000, 0.2)
+  background-color: rgba(0,0,0,0.8)
   padding-left: 0px
-  float: left
-
-.venue-name-odd
-  text-align: right
-  padding: 20px
-  font-size: 40px
-  font-family: 'Montserrat Subrayada', sans-serif
-
-.venue-description-odd
-  display: flex
-  width: 650px
-  flex-direction: column
-  padding: 20px
-  text-align: right
 
 .venue-content-odd
-  background: transparentize(#000000, 0.2)
+  background-color: rgba(0,0,0,0.8)
   padding-left: 0px
-  float: left
+  text-align: right
 
-.btn-venue-even
+
+.btn-venue
   font-family: 'Montserrat Subrayada', sans-serif
   font-weight: 400
   font-size: 12px
@@ -79,18 +67,10 @@ img
   background-color: transparent
   border: 1px solid #F6903D
   border-radius: 4px
-  margin-left: 20px
+  margin: 0 20px
 
-.btn-venue-odd
-  font-family: 'Montserrat Subrayada', sans-serif
-  font-weight: 400
-  font-size: 12px
-  padding: 10px 25px
-  background-color: transparent
-  border: 1px solid #F6903D
-  border-radius: 4px
-  margin-right: 20px
-  float: right
+.btn-venue:focus
+  outline: 0
 
 .create-venue
   height: 100vh
