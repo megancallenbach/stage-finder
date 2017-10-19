@@ -4,7 +4,6 @@ import '../../styles/ArtistDetail.css'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import getArtist from '../../actions/artists/get'
-import { Link } from 'react-router'
 
 class ArtistDetail extends PureComponent {
   componentWillMount(){
@@ -43,6 +42,7 @@ class ArtistDetail extends PureComponent {
             </div>
             <div className="white-box col-sm-5">
               <h1 className="upcoming">Upcoming</h1>
+              {artist.eventIds.length > 0 ? <p className="black-text">Events will show here...</p> : <p className="black-text">This artist has no upcoming events...</p> }
             </div>
             <div className="row photo-quote">
               <div className="artist-photo-md col-md-6">
