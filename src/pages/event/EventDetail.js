@@ -22,6 +22,7 @@ class EventDetail extends PureComponent {
   }
 
   renderArtist(artist, index){
+    if(!artist) return null
     return (
       <div className="artist-item" id={index}>
         <h3>{artist.name}</h3>
@@ -32,8 +33,8 @@ class EventDetail extends PureComponent {
   }
 
   renderArtistCount(artistCount){
-    if (artistCount > 1) return <p className="artist-count">We zoeken nog {artistCount} artiesten!</p>
-    else if (artistCount === 1) return <p className="artist-count">We zoeken nog {artistCount} artiest!</p>
+    if (artistCount > 1) return (`We zoeken nog ${artistCount} artiesten!`)
+    else if (artistCount === 1) return (`We zoeken nog ${artistCount} artiest!`)
     else return null
   }
 
@@ -44,6 +45,7 @@ class EventDetail extends PureComponent {
 
     const artists = [].concat(currentEvent.artists)
     const artistCount = (currentEvent.artistCount - artists.length)
+    const payment = currentEvent.paid
 
     return(
       <div className="event-detail">
@@ -54,14 +56,16 @@ class EventDetail extends PureComponent {
         <div className="row">
           <div className="orange-box col-sm-6">
             <h1 className="event-name">{currentEvent.title}</h1>
-            <h1 className="event-name">{currentEvent.venue.address}, {currentEvent.venue.city}</h1>
+            <h1 className="event-name">{currentEvent.date}, {currentEvent.time}</h1>
+            <h1 className="event-name">{currentEvent.venue.name}, {currentEvent.venue.address}, {currentEvent.venue.city}</h1>
             <p className="description">{currentEvent.description}</p>
           </div>
           <div className="white-box col-sm-6">
             <div className="row">
               <div className="artists-header col-sm-6">
                 <h1 className="upcoming">Artiesten</h1>
-                <p className="artist-count">We zoeken nog {artistCount} artiesten!</p>
+                { (payment) ? <p className="artist-count">Spelende artiesten krijgen een vergoeding van EUR {payment},-</p> : null}
+                <p className="artist-count">{this.renderArtistCount(artistCount)}</p>
               </div>
               <div className="artists-button col-sm-6">
               { (this.props.currentUser.artistProfileId) ? <span className="join-button" onClick={this.joinEvent.bind(this)}>Join!</span> : null }
@@ -69,7 +73,7 @@ class EventDetail extends PureComponent {
             </div>
             <div className="row">
               <div className="artists-wrapper col-sm-12">
-                { (artists) ? artists.map(this.renderArtist.bind(this)) : null }
+                { artists.map(this.renderArtist.bind(this)) }
               </div>
             </div>
           </div>
