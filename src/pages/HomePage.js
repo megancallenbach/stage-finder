@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import '../styles/HomePage.css'
-import { Link } from 'react-router'
 import Navbar from '../components/Navbar'
 
 class HomePage extends PureComponent {
@@ -12,10 +11,6 @@ class HomePage extends PureComponent {
           <div className="jumbotron">
             <div className="text-container">
               <h2 className="header-text">Iedereen verdient een eigen podium.</h2>
-            </div>
-            <div className="btn-container">
-              <button className="btn-green"><Link to={'/venues'} className="link">Find your stage</Link></button>
-              <button className="btn-transparent"><Link to={'/create-artist'} className="link">Create Profile</Link></button>
             </div>
           </div> {
           // <div className="two-columns row">
