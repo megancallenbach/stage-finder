@@ -16,16 +16,23 @@ class ArtistDetail extends PureComponent {
     return(
       <div className="artist-detail">
         <Navbar />
-        <div className="artist-photo">
-          <img className="image-responsive" src={artist.photo} alt=""/>
-        </div>
-        <div className="row">
-          <div className="orange-box col-sm-6">
-            <h1 className="artist-name">{artist.name}</h1>
-            <p className="description">{artist.description}</p>
-          </div>
-          <div className="white-box col-sm-6">
-            <h1 className="upcoming">Upcoming</h1>
+        <div className="artist-contents">
+          <div className="row">
+            <div className="black-box col-sm-4">
+              <h1 className="artist-name">{artist.name}</h1>
+              <p className="description">{artist.description}</p>
+            </div>
+            <div className="artist-video col-sm-8">
+              <iframe title="artist-video" src={artist.video} alt=""/>
+            </div>
+            <div className="orange-box col-sm-7">
+              <h1 className="artist-name">Bio</h1>
+              <p className="description">{artist.bio}</p>
+              <i class="fa fa-spinner fa-spin"></i>
+            </div>
+            <div className="white-box col-sm-5">
+              <h1 className="upcoming">Upcoming</h1>
+            </div>
           </div>
         </div>
         <Footer />
