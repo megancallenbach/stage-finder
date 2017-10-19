@@ -34,6 +34,7 @@ class ArtistDetail extends PureComponent {
             <div className="artist-video col-md-7">
               <iframe title="artist-video" src={artist.video} alt=""/>
             </div>
+
             <div className="orange-box col-sm-7">
               <h1 className="artist-name">Bio</h1>
               <p><i className="fa fa-map-marker"></i>{artist.city}</p>
@@ -43,6 +44,15 @@ class ArtistDetail extends PureComponent {
             <div className="white-box col-sm-5">
               <h1 className="upcoming">Upcoming</h1>
             </div>
+            <div className="row photo-quote">
+              <div className="artist-photo-md col-md-6">
+                <img src={artist.photo} alt=""/>
+              </div>
+              <div className="quote-container col-md-6">
+                <h1 className="artist-quote">{artist.quote}</h1>
+              </div>
+            </div>
+
           </div>
         </div>
         <Footer />
