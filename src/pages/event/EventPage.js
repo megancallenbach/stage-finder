@@ -48,7 +48,7 @@ class EventPage extends PureComponent {
     const events = this.props.events
     if (!events) return null
     return(
-      <div>
+      <div className="event-page">
       <Navbar />
         <h1>Discover the events</h1>
         <div className="events-container">
