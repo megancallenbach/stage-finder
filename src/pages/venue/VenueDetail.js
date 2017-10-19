@@ -8,16 +8,6 @@ import getVenue from '../../actions/venues/get'
 
 
 class VenueDetail extends PureComponent {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = { dates }
-  //   this.sortByDates = this.sortByDates.bind(this)
-  // }
-  // sortByDates() {
-  //   this.setState(prevState => {
-  //     this.state.dates.sort((a, b) => (a.dates - b.dates))
-  //   })
-  // }
 
   componentWillMount(){
     this.props.getVenue(this.props.params.venueId)
@@ -29,6 +19,10 @@ class VenueDetail extends PureComponent {
     //
     // console.log(sortedEvents)
     if (!this.props.currentVenue) return null
+
+     const allEvents = this.props.currentVenue.events
+     const eventDates = allEvents.map(allEvents => allEvents.date)
+     const eventTitles = allEvents.map(allEvents => allEvents.title)
     debugger
     return(
       <div className="venue-detail">
@@ -43,8 +37,8 @@ class VenueDetail extends PureComponent {
           </div>
           <div className="white-box col-sm-6">
             <h1 className="upcoming">Upcoming</h1>
-            <p className="venue-events">{this.props.currentVenue.events[0].title}</p>
-            <p className="venue-date">{this.props.currentVenue.events[0].date}</p>
+            <p className="venue-events">{eventTitles}</p>
+            <p className="venue-date">{eventDates}</p>
               </div>
           </div>
         <Footer />
