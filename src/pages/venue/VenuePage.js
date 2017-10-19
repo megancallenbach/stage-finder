@@ -14,32 +14,30 @@ class VenuePage extends PureComponent {
 
   renderVenue(venue, index){
     if (index % 2 === 0) return(
-      <div className="venue-even col-sm-12">
-          <div className="venue-box">
-            <div className="venue-image">
-              <img src={venue.photo} alt="" />
-            </div>
-            </div>
-              <div className="venue-content-even">
-              <p className="venue-name-even">{venue.name}</p>
-              <p className="venue-city-even">{venue.city}</p>
-            <p className="venue-description-even">{venue.description}</p>
-            <button className="btn-venue-even"><Link to={`/venues/${venue._id}`} className="link">View Venue</Link></button>
+      <div key={index} className="venue row">
+        <div className="venue-image col-md-7">
+          <img src={venue.photo} alt="" />
+        </div>
+        <div className="venue-content-even col-md-5">
+          <p className="venue-name">{venue.name}</p>
+          <p className="venue-city"><i className="fa fa-map-marker"></i>{venue.city}</p>
+          <p className="venue-description">{venue.description}</p>
+          <p className="upcoming-events">{venue.eventIds.length === 0 ? 'No' : venue.eventIds.length} Upcoming Events </p>
+          <button className="btn-venue"><Link to={`/venues/${venue._id}`} className="link">View Venue</Link></button>
         </div>
       </div>
  )
     return (
-      <div className="venue-odd col-sm-12">
-          <div className="venue-box">
-            <div className="venue-image">
-              <img src={venue.photo} alt="" />
-            </div>
-            </div>
-              <div className="venue-content-odd">
-              <p className="venue-name-odd">{venue.name}</p>
-            <p className="venue-city-odd">{venue.city}</p>
-            <p className="venue-description-odd">{venue.description}</p>
-            <button className="btn-venue-odd"><Link to={`/venues/${venue._id}`} className="link">View Venue</Link></button>
+      <div className="venue row">
+        <div className="venue-content-odd col-md-5">
+          <p className="venue-name">{venue.name}</p>
+          <p className="venue-city">{venue.city}<i className="fa fa-map-marker"></i></p>
+          <p className="venue-description">{venue.description}</p>
+          <p className="upcoming-events">{venue.eventIds.length === 0 ? 'No' : venue.eventIds.length} Upcoming Events </p>
+          <button className="btn-venue"><Link to={`/venues/${venue._id}`} className="link">View Venue</Link></button>
+        </div>
+        <div className="venue-image col-md-7">
+          <img src={venue.photo} alt="" />
         </div>
       </div>
     )

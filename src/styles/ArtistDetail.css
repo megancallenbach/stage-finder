@@ -1,3 +1,7 @@
+.artist-detail .row {
+  padding: 0;
+  margin: 0; }
+
 .artist-detail .artist-contents {
   width: 80%;
   margin: 30px auto; }
@@ -11,10 +15,30 @@
       border: 0;
       padding: 0; }
 
-.artist-detail .col-sm-8 {
+.artist-detail .artist-photo-md {
+  width: 100%;
+  max-height: 320px;
+  overflow: hidden; }
+  .artist-detail .artist-photo-md img {
+    width: 100%;
+    height: auto; }
+
+.artist-detail .social-links {
+  align-items: flex-start;
+  display: flex;
+  justify-content: flex-end; }
+  .artist-detail .social-links a i {
+    font-size: 40px;
+    padding: 0 10px;
+    color: white; }
+
+.artist-detail .col-md-7 {
   padding: 0; }
 
-.artist-detail .col-sm-4 {
+.artist-detail .col-md-5 {
+  padding: 0; }
+
+.artist-detail .col-md-6 {
   padding: 0; }
 
 .artist-detail .black-box {
@@ -22,24 +46,48 @@
   background-color: rgba(0, 0, 0, 0.8);
   padding: 50px; }
 
+.artist-detail .name-description {
+  height: 270px;
+  overflow: hidden; }
+
 .artist-detail .orange-box {
   padding: 50px;
   height: 400px;
-  background-color: #F6903D; }
+  background-color: rgba(255, 136, 34, 0.8); }
 
 .artist-detail .artist-name {
   font-size: 30px;
   text-align: left; }
   .artist-detail .artist-name .description {
     font-size: 20px;
-    font-weight: 300; }
+    font-weight: 300;
+    overflow: hidden; }
 
 .artist-detail .white-box {
   height: 400px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 50px; }
   .artist-detail .white-box .upcoming {
     font-size: 30px;
     font-family: 'Montserrat Subrayada', sans-serif;
     color: #111;
     text-align: left; }
+  .artist-detail .white-box .black-text {
+    font-size: 20px;
+    padding-top: 0;
+    text-align: left; }
+
+.artist-detail .quote-container {
+  background-color: rgba(0, 0, 0, 0.9);
+  max-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .artist-detail .quote-container .artist-quote {
+    font-weight: 300;
+    font-size: 30px;
+    padding: 0 20px; }
+
+.photo-quote {
+  width: 100%;
+  margin: 0 auto; }

@@ -18,21 +18,41 @@ class ArtistDetail extends PureComponent {
         <Navbar />
         <div className="artist-contents">
           <div className="row">
-            <div className="black-box col-sm-4">
-              <h1 className="artist-name">{artist.name}</h1>
-              <p className="description">{artist.description}</p>
+            <div className="black-box col-md-5">
+              <div className="name-description">
+                <h1 className="artist-name">{artist.name}</h1>
+                <p className="description">{artist.description}</p>
+              </div>
+              <div className="social-links">
+                <a href={artist.soundcloud} className="link"><i className="fa fa-soundcloud"> </i></a>
+                <a href={artist.spotify} className="link"><i className="fa fa-spotify"> </i></a>
+                <a href={artist.youtube} className="link"><i className="fa fa-youtube"> </i></a>
+                <a href={artist.facebook} className="link"><i className="fa fa-facebook"> </i></a>
+              </div>
             </div>
-            <div className="artist-video col-sm-8">
+            <div className="artist-video col-md-7">
               <iframe title="artist-video" src={artist.video} alt=""/>
             </div>
+
             <div className="orange-box col-sm-7">
               <h1 className="artist-name">Bio</h1>
+              <p><i className="fa fa-map-marker"></i>{artist.city}</p>
               <p className="description">{artist.bio}</p>
-              <i class="fa fa-spinner fa-spin"></i>
+
             </div>
             <div className="white-box col-sm-5">
               <h1 className="upcoming">Upcoming</h1>
+              {artist.eventIds.length > 0 ? <p className="black-text">Events will show here...</p> : <p className="black-text">This artist has no upcoming events...</p> }
             </div>
+            <div className="row photo-quote">
+              <div className="artist-photo-md col-md-6">
+                <img src={artist.photo} alt=""/>
+              </div>
+              <div className="quote-container col-md-6">
+                <h1 className="artist-quote">{artist.quote}</h1>
+              </div>
+            </div>
+
           </div>
         </div>
         <Footer />

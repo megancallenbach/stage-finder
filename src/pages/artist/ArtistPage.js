@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import fetchArtists from '../../actions/artists/fetch'
 import '../../styles/ArtistPage.css'
 import { Link } from 'react-router'
-// import { Icon } from 'react-fontawesome'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 
@@ -13,9 +12,9 @@ class ArtistPage extends PureComponent {
     this.props.fetchArtists()
   }
 
-  renderArtist(artist){
+  renderArtist(artist, index){
     return (
-      <div className="artist col-md-4 col-sm-6">
+      <div key={index} className="artist col-md-4 col-sm-6">
         <h2 className="artist-name">{artist.name}</h2>
         <div className="artist-box">
           <div className="artist-image">
@@ -26,7 +25,7 @@ class ArtistPage extends PureComponent {
               <p className="description">{artist.description}</p>
             </div>
             <div className="artist-city">
-              <p className="city">City: {artist.city}</p>
+              <p className="city"><i className="fa fa-map-marker"></i>{artist.city}</p>
             </div>
               <button className="btn-artist"><Link to={`/artists/${artist._id}`} className="link">View Artist</Link></button>
           </div>
