@@ -1,22 +1,31 @@
 .event-page {
-  height: 100vh; }
+  height: 100vh;
+  background-image: url("../images/bg3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  overflow-y: scroll; }
 
 .events-container {
-  margin: 0 100px; }
+  width: 80%;
+  margin: 0 auto; }
+
+.create-event {
+  height: 100vh; }
 
 .row {
   margin-left: 100px; }
 
 .event {
-  text-align: center;
-  height: 400px;
-  margin: 20px;
-  background-color: rgba(0, 0, 0, 0.4);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px; }
+  text-align: center; }
+
+.events-title {
+  margin-top: 10px; }
 
 .event-name {
-  font-family: 'Montserrat Subrayada', sans-serif; }
+  font-family: 'Montserrat Subrayada', sans-serif;
+  font-size: 30px;
+  height: 60px; }
 
 .btn-event {
   font-family: 'Montserrat Subrayada', sans-serif;
@@ -29,12 +38,12 @@
   margin-top: 20px; }
 
 .event-box {
-  border-radius: 25px;
   border: 1px solid transparent;
   padding: 10px;
-  width: 100%;
-  height: 100%; }
+  margin: 20px;
+  background-color: rgba(0, 0, 0, 0.4); }
 
 .event-description {
   width: 100%;
-  height: 60px; }
+  height: 75px;
+  overflow: hidden; }

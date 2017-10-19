@@ -4,6 +4,7 @@ import fetchEvents from '../../actions/events/fetch'
 import '../../styles/EventPage.css'
 import { Link } from 'react-router'
 import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
 
 
 class EventPage extends PureComponent {
@@ -14,7 +15,7 @@ class EventPage extends PureComponent {
 
   renderEvent(event, index){
     return (
-      <div key={index} className="event col-md-5 col-sm-6">
+      <div key={index} className="event col-sm-6">
         <div className="event-box">
           <h2 className="event-name">{event.title}</h2>
           <br />
@@ -49,15 +50,16 @@ class EventPage extends PureComponent {
     if (!events) return null
     return(
       <div className="event-page">
-      <Navbar />
-        <h1>Discover the events</h1>
-        <div className="events-container">
-          <div className="row">
-            { events.map(this.renderEvent.bind(this)) }
+        <Navbar />
+        <div className="scroll">
+          <h1 className="events-title">Find Your Stage</h1>
+          <div className="events-container">
+            <div className="row">
+              { events.map(this.renderEvent.bind(this)) }
+            </div>
           </div>
+          < Footer/>
         </div>
-        <br />
-        <br />
       </div>
     )
   }

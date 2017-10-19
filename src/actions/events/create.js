@@ -1,4 +1,5 @@
 import API from '../../api'
+import { history } from '../../store'
 
 export const EVENT_CREATED = 'EVENT_CREATED'
 
@@ -18,6 +19,7 @@ export default (eventData) => {
               type: EVENT_CREATED,
               payload: result
             })
+            history.push(`/events/${result._id}`)
           })
           .catch((error) => {
             console.log(error)
