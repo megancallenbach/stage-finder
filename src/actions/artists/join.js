@@ -15,11 +15,11 @@ export default (artistId, eventId) => {
         backend.patch(artistId, { type: JOIN_EVENT, payload: eventId})
           .then((result) => {
             console.log(result)
-                dispatch({
-                  type: ARTIST_JOINED_EVENT,
-                  payload: result
-                })
-              })
+            dispatch({
+              type: ARTIST_JOINED_EVENT,
+              payload: result
+            })
+          })
           .catch((error) => {
             console.log(error)
           })

@@ -68,7 +68,7 @@ class EventDetail extends PureComponent {
                 <p className="artist-count">{this.renderArtistCount(artistCount)}</p>
               </div>
               <div className="artists-button col-sm-6">
-              { (this.props.currentUser.artistProfileId) ? <span className="join-button" onClick={this.joinEvent.bind(this)}>Join!</span> : null }
+              { (this.props.currentUser.artistProfileId && artistCount > 0) ? <span className="join-button" onClick={this.joinEvent.bind(this)}>Join!</span> : null }
               </div>
             </div>
             <div className="row">
