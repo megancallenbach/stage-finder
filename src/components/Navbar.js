@@ -20,6 +20,15 @@ class Navbar extends PureComponent {
     if(currentUser.venueProfileId) push(`/venues/${currentUser.venueProfileId}/edit`)
   }
 
+goToCreateEvent(){
+  const{ currentUser, push } = this.props
+
+  if (currentUser.venueProfileId) push(`/create-event`)
+
+}
+
+
+
   signOutUser(){
     this.props.signOut()
   }
@@ -27,11 +36,16 @@ class Navbar extends PureComponent {
   sessionButtons(){
     const { currentUser } = this.props
 
-    if (currentUser) return(
+    if (currentUser && currentUser.venueProfileId) return(
       <ul className="navbar-nav">
         <li className="nav-item">
           <span className="nav-link" onClick={this.signOutUser.bind(this)}>
             log out
+          </span>
+        </li>
+        <li className="nav-item">
+          <span className="nav-link" onClick={this.goToCreateEvent.bind(this)}>
+            create an event
           </span>
         </li>
         <li className="nav-item">
@@ -42,7 +56,23 @@ class Navbar extends PureComponent {
       </ul>
     )
 
-    return(
+    else if (currentUser && !currentUser.venueProfileId) return(
+      <ul className="navbar-nav">
+        <li className="nav-item">
+          <span className="nav-link" onClick={this.signOutUser.bind(this)}>
+            log out
+          </span>
+        </li>
+
+        <li className="nav-item">
+          <span className="nav-link" onClick={this.goToProfile.bind(this)}>
+            my profile
+          </span>
+        </li>
+      </ul>
+    )
+
+    else return(
       <ul className="navbar-nav">
         <li className="nav-item">
           <Link to={'/sign-in'} className="nav-link"> log in </Link>
@@ -65,7 +95,7 @@ class Navbar extends PureComponent {
         <div id="navbarNavDropdown" className="navbar-collapse collapse">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <Link to={'/events'} className="nav-link">find events</Link>
+              <Link to={'/events'} className="nav-link">find your stage</Link>
             </li>
             <li className="nav-item">
               <Link to={'/venues'} className="nav-link">all stages</Link>

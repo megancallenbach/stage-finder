@@ -1,5 +1,16 @@
+.sign-in {
+  height: 100vh; }
+  .sign-in .signInForm {
+    display: flex;
+    flex-direction: column; }
+
+.sign-up {
+  height: 100vh; }
+  .sign-up .signUpForm {
+    display: flex;
+    flex-direction: column; }
+
 .btn-submit {
-  float: left;
   color: white;
   padding: 8px 25px;
   background-color: #43A67C;
@@ -12,17 +23,23 @@
 .formWrapper {
   align-self: center;
   margin: 20px;
-  max-width: 300px;
+  max-width: 320px;
   min-width: 300px;
   color: white;
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 20px;
   border: 1px solid #FFFFFF;
   border-radius: 5px;
   background: rgba(0, 0, 0, 0.8); }
 
 .formItem {
-  margin: 5px; }
+  margin: 5px;
+  width: 260px; }
+
+input {
+  background-color: white;
+  border-radius: 5px;
+  outline: 0; }
 
 Main {
   display: flex;

@@ -34,7 +34,7 @@ class CreateEvent extends PureComponent {
   render() {
     if(!this.props.currentUser.venueProfileId) return null
     return (
-      <div className="background">
+      <div className="create-event">
         <Navbar />
         <div className="wrapper artist-profile">
           <h1>Create An Event</h1>
