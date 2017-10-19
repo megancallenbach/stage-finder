@@ -3,12 +3,14 @@
   background-image: url("../images/bg3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center;
   width: 100%;
   overflow-y: scroll; }
 
 .events-container {
   width: 80%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  min-height: 90%; }
 
 .create-event {
   height: 100vh; }
@@ -36,6 +38,9 @@
   border: 1px solid #F6903D;
   border-radius: 4px;
   margin-top: 20px; }
+
+.btn-event:focus {
+  outline: 0; }
 
 .event-box {
   border: 1px solid transparent;

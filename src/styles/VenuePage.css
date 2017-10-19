@@ -8,7 +8,8 @@
     margin: 0; }
   .venue-page .venues-container {
     width: 80%;
-    margin: 0 auto; }
+    margin: 0 auto;
+    min-height: 90%; }
   .venue-page i {
     padding: 0 10px; }
 
@@ -69,6 +70,9 @@ img {
 
 .btn-venue:focus {
   outline: 0; }
+
+.edit-venue-profile {
+  height: 100vh; }
 
 .create-venue {
   height: 100vh; }

@@ -32,7 +32,8 @@
   text-align: center; }
 
 .artists-container {
-  margin: 0 20px; }
+  margin: 0 20px;
+  min-height: 90%; }
 
 .artist-content {
   text-align: center;

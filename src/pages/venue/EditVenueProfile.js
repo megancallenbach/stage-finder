@@ -28,7 +28,7 @@ class EditVenueProfile extends PureComponent {
     const { currentUser } = this.props
     if(!currentUser) return null
     return (
-      <div className="background">
+      <div className="edit-venue-profile">
       < Navbar />
       <br />
         <div className="wrapper venue-profile">
