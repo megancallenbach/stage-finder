@@ -56,7 +56,7 @@ class EventDetail extends PureComponent {
         <div className="row">
           <div className="orange-box col-sm-6">
             <h1 className="event-name">{currentEvent.title}</h1>
-            <h1 className="event-name">{currentEvent.date}, {currentEvent.time}</h1>
+            <h1 className="event-name">{currentEvent.dutchDate}, {currentEvent.time}</h1>
             <h1 className="event-name">{currentEvent.venue.name}, {currentEvent.venue.address}, {currentEvent.venue.city}</h1>
             <p className="description">{currentEvent.description}</p>
           </div>
