@@ -32,8 +32,8 @@ class VenueDetail extends PureComponent {
     if (!this.props.currentVenue) return null
 
      const allEvents = this.props.currentVenue.events
-     const eventDates = allEvents.map(allEvents => allEvents.date)
-     const eventTitles = allEvents.map(allEvents => allEvents.title)
+     const eventDates = allEvents === null ? "" : allEvents.map(allEvents => allEvents.date)
+     const eventTitles = allEvents === null ? "" : allEvents.map(allEvents => allEvents.title)
 
     return(
       <div className="venue-detail-page">
@@ -55,14 +55,13 @@ class VenueDetail extends PureComponent {
           ) : (
 
             <div className="events col-md-12">
-              <h1> Events will go here </h1>
+              <h1> Events </h1>
               <p className="venue-events">{eventTitles}</p>
               <p className="venue-date">{eventDates}</p>
             </div>
           )}
-
-
           </div>
+        </div>
         <Footer />
       </div>
     )
