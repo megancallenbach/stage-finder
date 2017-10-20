@@ -1,8 +1,7 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import search from '../actions/search/search'
-
-
+import '../styles/SearchBar.css'
 
 class SearchBar extends PureComponent {
 
@@ -16,7 +15,7 @@ class SearchBar extends PureComponent {
   render() {
     return (
       <form onSubmit={this.searchAction.bind(this)} id="searchForm" className="form-inline my-2 my-lg-0">
-        <input className="form-control mr-sm-2" ref="search" type="text" placeholder="Search" aria-label="Search"></input>
+        <input className="form-control mr-sm-2" ref="search" type="text" placeholder="Find your venues" aria-label="Search"></input>
       </form>
     )
   }
@@ -24,4 +23,4 @@ class SearchBar extends PureComponent {
 
 const mapStateToProps = ({ currentUser }) => ({ currentUser })
 
-export default connect(mapStateToProps, { search })(SearchBar);
+export default connect(mapStateToProps, { search })(SearchBar)

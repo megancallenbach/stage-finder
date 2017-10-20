@@ -11,11 +11,12 @@
   color: white;
   font-weight: 300;
   font-size: 45px;
-  font-family: 'Khula', sans-serif; }
+  font-family: 'Khula', sans-serif;
+  text-align: left; }
 
 .text-container {
   width: 360px;
-  margin-top: 150px;
+  margin-top: 100px;
   margin-right: 40px; }
 
 .btn-container {
@@ -107,4 +108,7 @@
 
 .search-bar {
   margin: auto;
+  width: 700px; }
+
+.form-control {
   width: 700px; }

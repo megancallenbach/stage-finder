@@ -37,7 +37,7 @@ goToCreateEvent(){
     const { currentUser } = this.props
 
     if (currentUser && currentUser.venueProfileId) return(
-      <ul className="navbar-nav">
+      <ul className="navbar-nav ml-auto">
         <li className="nav-item">
           <span className="nav-link" onClick={this.signOutUser.bind(this)}>
             log out
@@ -57,7 +57,7 @@ goToCreateEvent(){
     )
 
     else if (currentUser && !currentUser.venueProfileId) return(
-      <ul className="navbar-nav">
+      <ul className="navbar-nav ml-auto">
         <li className="nav-item">
           <span className="nav-link" onClick={this.signOutUser.bind(this)}>
             log out
@@ -73,7 +73,7 @@ goToCreateEvent(){
     )
 
     else return(
-      <ul className="navbar-nav">
+      <ul className="navbar-nav ml-auto">
         <li className="nav-item">
           <Link to={'/sign-in'} className="nav-link"> log in </Link>
         </li>
