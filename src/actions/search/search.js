@@ -9,7 +9,7 @@ export default (searchInput) => {
 
     const backend = api.service('search')
 
-    backend.get({
+    backend.find({
       query: {
         $sqs: {
           $fields: [
