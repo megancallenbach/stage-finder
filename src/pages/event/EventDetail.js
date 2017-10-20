@@ -49,7 +49,7 @@ class EventDetail extends PureComponent {
 
     return(
       <div className="event-detail">
-        <Navbar />
+        <Navbar searchBar={true} />
         <div className="event-page">
           <div className="event-photo">
             <img className="image-responsive" src={(currentEvent.photo) ? currentEvent.photo : currentEvent.venue.photo} alt=""/>

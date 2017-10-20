@@ -5,7 +5,7 @@ export default class Header extends PureComponent {
   render() {
     return (
       <div className="header-bg">
-        <Navbar />
+        <Navbar searchBar={true} />
         
       </div>
     )

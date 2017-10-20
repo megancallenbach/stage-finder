@@ -35,7 +35,7 @@ class EditArtistProfile extends PureComponent {
     if(!currentUser) return null
     return (
       <div className="edit-artist">
-        <Navbar />
+        <Navbar searchBar={true} />
         <div className="wrapper artist-profile">
           <h1>Update Your Artist Profile</h1>
           <form onSubmit={this.submitForm.bind(this)}>

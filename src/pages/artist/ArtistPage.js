@@ -39,7 +39,7 @@ class ArtistPage extends PureComponent {
     if (!artists) return null
     return(
       <div className="artist-page">
-        <Navbar />
+        <Navbar searchBar={true}/>
         <div className="scroll">
           <h1 className="title">Discover the artists</h1>
           <div className="artists-container">

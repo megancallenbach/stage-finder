@@ -51,7 +51,7 @@ class EventPage extends PureComponent {
     if (!events) return null
     return(
       <div className="event-page">
-        <Navbar />
+        <Navbar searchBar={true}/>
         <div className="scroll">
           <h1 className="events-title">Find Your Stage</h1>
           <div className="events-container">

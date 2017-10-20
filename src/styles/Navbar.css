@@ -1,3 +1,17 @@
+nav form.form-inline {
+  width: 150px;
+  margin-right: 40px; }
+
+nav form.form-inline input.form-control {
+  width: 200px;
+  font-size: 17px;
+  height: 25px;
+  margin-right: 40px; }
+
+nav form#searchForm {
+  padding-top: 10%;
+  height: 15px; }
+
 li {
   padding-left: 20px; }
 

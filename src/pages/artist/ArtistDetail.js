@@ -15,7 +15,7 @@ class ArtistDetail extends PureComponent {
     const artist = this.props.currentArtist
     return(
       <div className="artist-detail">
-        <Navbar />
+        <Navbar searchBar={true}/>
         <div className="artist-contents">
           <div className="row">
             <div className="black-box col-md-5">
