@@ -1,18 +1,26 @@
 import React, { PureComponent } from 'react'
+import { connect } from 'react-redux'
+import search from '../actions/search/search'
 import '../styles/SearchBar.css'
-
-
 
 class SearchBar extends PureComponent {
 
+  searchAction(event){
+    event.preventDefault()
+    const searchInput = this.refs.search.value
+    this.props.search(searchInput)
+    document.getElementById('searchForm').reset()
+  }
+
   render() {
     return (
-
-
-    <form className="form-inline my-2 my-lg-0">
-      <input className="form-control mr-sm-2" type="text" placeholder="Find your venues" aria-label="Search"></input>
-    </form>
-  )
+      <form onSubmit={this.searchAction.bind(this)} id="searchForm" className="form-inline my-2 my-lg-0">
+        <input className="form-control mr-sm-2" ref="search" type="text" placeholder="Find your venues" aria-label="Search"></input>
+      </form>
+    )
+  }
 }
-}
-export default SearchBar;
+
+const mapStateToProps = ({ currentUser }) => ({ currentUser })
+
+export default connect(mapStateToProps, { search })(SearchBar)
