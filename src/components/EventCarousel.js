@@ -61,11 +61,12 @@ class EventCarousel extends React.Component {
             <div className="col-md-12">
               <React_Bootstrap_Carousel
                 animation={true}
-                slideshowSpeed={7000}
+                slideshowSpeed={3000}
                 leftIcon={leftIcon}
                 rightIcon={rightIcon}
                 onSelect={this.onSelect}
                 ref={r=>this.slider=r}
+                indicators={false}
                 className="carousel-fade"
               >
               {this.props.events.map(this.renderEvent.bind(this))}
