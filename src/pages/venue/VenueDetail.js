@@ -38,7 +38,7 @@ class VenueDetail extends PureComponent {
           <div className="white-box col-sm-6">
             <h1 className="upcoming">Upcoming</h1>
             <p className="venue-events">{eventTitles}</p>
-            <p className="venue-date">{eventDates}</p>
+            <p className="venue-date">{eventDates.sort((a,b) => new Date(a) - new Date(b))}</p>
               </div>
           </div>
         <Footer />
