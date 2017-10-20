@@ -6,6 +6,7 @@ import currentVenue from './currentVenue'
 import currentEvent from './currentEvent'
 import currentArtist from './currentArtist'
 import searchResults from './searchResults'
+import searchInput from './searchInput'
 
 export default {
   artists,
@@ -16,4 +17,5 @@ export default {
   currentEvent,
   currentArtist,
   searchResults,
+  searchInput,
 }
