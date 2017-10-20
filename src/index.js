@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.css';
+import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
