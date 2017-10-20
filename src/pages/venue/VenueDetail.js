@@ -5,7 +5,10 @@ import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import getVenue from '../../actions/venues/get'
 
+
+
 class VenueDetail extends PureComponent {
+
   componentWillMount(){
     this.props.getVenue(this.props.params.venueId)
   }
@@ -22,11 +25,20 @@ class VenueDetail extends PureComponent {
   }
 
   render() {
+
+    // const sortedEvents = this.props.currentEvent.sort(Date)
+    //
+    // console.log(sortedEvents)
     if (!this.props.currentVenue) return null
+
+     const allEvents = this.props.currentVenue.events
+     const eventDates = allEvents.map(allEvents => allEvents.date)
+     const eventTitles = allEvents.map(allEvents => allEvents.title)
 
     return(
       <div className="venue-detail-page">
         <Navbar/>
+
         <div className="venue-detail">
           <div className="row">
             <div className="venue-photo col-sm-7">
@@ -44,11 +56,13 @@ class VenueDetail extends PureComponent {
 
             <div className="events col-md-12">
               <h1> Events will go here </h1>
+              <p className="venue-events">{eventTitles}</p>
+              <p className="venue-date">{eventDates}</p>
             </div>
           )}
 
+
           </div>
-        </div>
         <Footer />
       </div>
     )
