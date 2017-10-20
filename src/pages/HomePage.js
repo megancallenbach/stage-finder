@@ -12,7 +12,7 @@ class HomePage extends PureComponent {
           <div className="jumbotron">
            <div className="row">
             <div className="text-container col-md-6">
-              <h2 className="header-text">Iedereen verdient een eigen podium.</h2>
+              <h2 className="header-text">Iedereen verdient <br/>een eigen podium.</h2>
             </div>
             </div>
             <div className="row">
