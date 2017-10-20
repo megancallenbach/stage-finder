@@ -1,6 +1,8 @@
 .home-page {
   width: 100%;
   height: 100vh; }
+  .home-page form#searchForm {
+    padding-top: 180px; }
 
 .jumbotron {
   background-color: transparent;
