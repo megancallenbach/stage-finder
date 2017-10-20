@@ -48,7 +48,7 @@ class SearchResults extends PureComponent {
       <div className="event-page">
         <Navbar />
         <div className="scroll">
-          <h1 className="events-title">Find Your Stage</h1>
+          <h1 className="events-title">Search results for: {this.props.searchInput}</h1>
           <div className="events-container">
             <div className="row">
               { events.map(this.renderEvent.bind(this)) }
@@ -61,6 +61,6 @@ class SearchResults extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ searchResults }) => ({ searchResults })
+const mapStateToProps = ({ searchResults, searchInput }) => ({ searchResults, searchInput })
 
 export default connect(mapStateToProps)(SearchResults)

@@ -95,10 +95,10 @@ goToCreateEvent(){
         <div id="navbarNavDropdown" className="navbar-collapse collapse">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <Link to={'/events'} className="nav-link">find your stage</Link>
+              <Link to={'/events'} className="nav-link">all events</Link>
             </li>
             <li className="nav-item">
-              <Link to={'/venues'} className="nav-link">all stages</Link>
+              <Link to={'/venues'} className="nav-link">all venues</Link>
             </li>
             <li className="nav-item">
               <Link to={'/artists'} className="nav-link">all artists</Link>

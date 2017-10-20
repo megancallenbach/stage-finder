@@ -1,7 +1,8 @@
 import API from '../../api'
 import { history } from '../../store'
 
-export const SEARCH = 'SEARCH'
+export const SEARCH_INPUT = 'SEARCH_INPUT'
+export const SEARCH_RESULTS = 'SEARCH_RESULTS'
 
 const api = new API()
 
@@ -24,7 +25,11 @@ export default (searchInput) => {
       .then((result) => {
         console.log(result)
         dispatch({
-          type: SEARCH,
+          type: SEARCH_INPUT,
+          payload: searchInput
+        })
+        dispatch({
+          type: SEARCH_RESULTS,
           payload: result
         })
         history.push('/search-results')

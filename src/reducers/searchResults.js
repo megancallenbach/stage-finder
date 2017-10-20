@@ -1,9 +1,9 @@
-import { SEARCH } from '../actions/search/search'
+import { SEARCH_RESULTS } from '../actions/search/search'
 
 export default (state = [], { type, payload } = {}) => {
   switch (type) {
 
-    case SEARCH :
+    case SEARCH_RESULTS :
       return payload.data
 
     default :
