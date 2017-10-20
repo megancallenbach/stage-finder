@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-
+import '../styles/SearchBar.css'
 
 
 
@@ -9,8 +9,8 @@ class SearchBar extends PureComponent {
     return (
 
 
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"></input>
+    <form className="form-inline my-2 my-lg-0">
+      <input className="form-control mr-sm-2" type="text" placeholder="Find your venues" aria-label="Search"></input>
     </form>
   )
 }
