@@ -11,7 +11,12 @@
   background: rgba(0, 0, 0, 0.2); }
 
 h1 {
-  text-align: center; }
+  text-align: center;
+  padding-top: 18px;
+  font-family: 'Montserrat Subrayada', sans-serif; }
+
+.form-group {
+  padding-top: 14px; }
 
 .form-control {
   width: 100%; }
@@ -25,6 +30,9 @@ h1 {
   background-color: #43A67C;
   border: 1px solid #43A67C;
   border-radius: 4px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  margin-right: 15px;
   font-family: 'Montserrat Subrayada', sans-serif;
   font-weight: 400;
-  font-size: 12px; }
+  font-size: 14px; }
