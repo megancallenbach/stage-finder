@@ -13,6 +13,17 @@ class VenueDetail extends PureComponent {
     this.props.getVenue(this.props.params.venueId)
   }
 
+  renderEvent(venueEvent, index){
+    return (
+      <div className="event-carousel-item" key={index}>
+          <h1>{venueEvent.title}</h1>
+          <p>{venueEvent.description}</p>
+          <p>{venueEvent.date}</p>
+          <p>{venueEvent.artistCount - venueEvent.artistIds.length} spots available!</p>
+      </div>
+    )
+  }
+
   render() {
 
     // const sortedEvents = this.props.currentEvent.sort(Date)
@@ -23,23 +34,34 @@ class VenueDetail extends PureComponent {
      const allEvents = this.props.currentVenue.events
      const eventDates = allEvents.map(allEvents => allEvents.date)
      const eventTitles = allEvents.map(allEvents => allEvents.title)
-    debugger
+
     return(
-      <div className="venue-detail">
+      <div className="venue-detail-page">
         <Navbar/>
-        <div className="venue-photo">
-          <img className="image-responsive" src={this.props.currentVenue.photo} alt=""/>
-        </div>
-        <div className="row">
-          <div className="orange-box col-sm-6">
-            <h1 className="venue-name">{this.props.currentVenue.name}</h1>
-            <p className="description">{this.props.currentVenue.address}</p>
-          </div>
-          <div className="white-box col-sm-6">
-            <h1 className="upcoming">Upcoming</h1>
-            <p className="venue-events">{eventTitles}</p>
-            <p className="venue-date">{eventDates}</p>
-              </div>
+
+        <div className="venue-detail">
+          <div className="row">
+            <div className="venue-photo col-sm-7">
+              <img className="image-responsive" src={this.props.currentVenue.photo} alt=""/>
+            </div>
+            <div className="black-box col-md-5">
+              <h1 className="venue-name">{this.props.currentVenue.name}</h1>
+              <p className="description">{this.props.currentVenue.description}</p>
+            </div>
+          { !this.props.currentVenue.events ? (
+            <div className="no-events col-md-12">
+              <h1> No upcoming events... </h1>
+            </div>
+          ) : (
+
+            <div className="events col-md-12">
+              <h1> Events will go here </h1>
+              <p className="venue-events">{eventTitles}</p>
+              <p className="venue-date">{eventDates}</p>
+            </div>
+          )}
+
+
           </div>
         <Footer />
       </div>

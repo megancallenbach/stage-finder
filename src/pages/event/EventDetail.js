@@ -50,30 +50,32 @@ class EventDetail extends PureComponent {
     return(
       <div className="event-detail">
         <Navbar />
-        <div className="event-photo">
-          <img className="image-responsive" src={(currentEvent.photo) ? currentEvent.photo : currentEvent.venue.photo} alt=""/>
-        </div>
-        <div className="row">
-          <div className="orange-box col-sm-6">
-            <h1 className="event-name">{currentEvent.title}</h1>
-            <h1 className="event-name">{currentEvent.dutchDate}, {currentEvent.time}</h1>
-            <h1 className="event-name">{currentEvent.venue.name}, {currentEvent.venue.address}, {currentEvent.venue.city}</h1>
-            <p className="description">{currentEvent.description}</p>
+        <div className="event-page">
+          <div className="event-photo">
+            <img className="image-responsive" src={(currentEvent.photo) ? currentEvent.photo : currentEvent.venue.photo} alt=""/>
           </div>
-          <div className="white-box col-sm-6">
-            <div className="row">
-              <div className="artists-header col-sm-6">
-                <h1 className="upcoming">Artiesten</h1>
-                { (payment) ? <p className="artist-count">Spelende artiesten krijgen een vergoeding van EUR {payment},-</p> : null}
-                <p className="artist-count">{this.renderArtistCount(artistCount)}</p>
-              </div>
-              <div className="artists-button col-sm-6">
-              { (this.props.currentUser.artistProfileId && artistCount > 0) ? <span className="join-button" onClick={this.joinEvent.bind(this)}>Join!</span> : null }
-              </div>
+          <div className="row">
+            <div className="orange-box col-sm-6">
+              <h1 className="event-name">{currentEvent.title}</h1>
+              <h1 className="event-name">{currentEvent.date}, {currentEvent.time}</h1>
+              <h1 className="event-name">{currentEvent.venue.name}, {currentEvent.venue.address}, {currentEvent.venue.city}</h1>
+              <p className="description">{currentEvent.description}</p>
             </div>
-            <div className="row">
-              <div className="artists-wrapper col-sm-12">
-                { artists.map(this.renderArtist.bind(this)) }
+            <div className="white-box col-sm-6">
+              <div className="row">
+                <div className="artists-header col-sm-6">
+                  <h1 className="upcoming">Artiesten</h1>
+                  { (payment) ? <p className="artist-count">Spelende artiesten krijgen een vergoeding van EUR {payment},-</p> : null}
+                  <p className="artist-count">{this.renderArtistCount(artistCount)}</p>
+                </div>
+                <div className="artists-button col-sm-6">
+                { (this.props.currentUser.artistProfileId && artistCount > 0) ? <span className="join-button" onClick={this.joinEvent.bind(this)}>Join!</span> : null }
+                </div>
+              </div>
+              <div className="row">
+                <div className="artists-wrapper col-sm-12">
+                  { artists.map(this.renderArtist.bind(this)) }
+                </div>
               </div>
             </div>
           </div>

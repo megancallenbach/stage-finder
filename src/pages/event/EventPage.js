@@ -22,6 +22,7 @@ class EventPage extends PureComponent {
 
           <div className="event-content">
             <div className="event-date">
+
               <h3 className="date">{event.dutchDate}</h3>
             </div>
             <div className="event-city">

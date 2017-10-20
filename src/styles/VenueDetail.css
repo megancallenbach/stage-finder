@@ -1,22 +1,57 @@
-.venue-detail .venue-photo {
-  width: 100%;
-  height: 450px; }
-  .venue-detail .venue-photo img {
-    width: 100%;
-    height: 450px;
-    object-fit: cover; }
-
-.venue-detail .orange-box {
-  padding: 50px;
-  height: 400px;
-  background-color: #F6903D;
-  max-width: 50%; }
-  .venue-detail .orange-box .venue-name {
+.venue-detail-page {
+  height: 100vh; }
+  .venue-detail-page .row {
+    padding: 0;
+    margin: 0; }
+  .venue-detail-page .venue-detail {
+    width: 80%;
+    margin: 30px auto; }
+  .venue-detail-page .venue-photo {
+    width: auto;
+    height: 300px;
+    overflow: hidden; }
+    .venue-detail-page .venue-photo img {
+      width: 100%;
+      height: 300px; }
+  .venue-detail-page .footer-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%; }
+  .venue-detail-page .black-box {
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 50px; }
+  .venue-detail-page .orange-box {
+    padding: 50px;
+    height: 400px;
+    background-color: rgba(255, 136, 34, 0.8); }
+  .venue-detail-page .venue-name {
     font-size: 30px;
+    font-family: 'Montserrat Subrayada', sans-serif;
     text-align: left; }
-  .venue-detail .orange-box .description {
+  .venue-detail-page .description {
     font-size: 20px;
     font-weight: 300; }
+  .venue-detail-page .no-events {
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 50px; }
+  .venue-detail-page .events {
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 50px; }
+    .venue-detail-page .events .upcoming {
+      font-size: 30px;
+      font-family: 'Montserrat Subrayada', sans-serif;
+      color: #111;
+      text-align: left; }
+
+
+.col-sm-5 {
+  padding: 0; }
+
+.col-sm-7 {
+  padding: 0; }
 
 .venue-detail .white-box {
   height: 400px;
@@ -34,3 +69,4 @@
 
 .venue-date {
   color: black; }
+
