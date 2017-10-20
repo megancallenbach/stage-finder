@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import '../styles/HomePage.css'
 import Navbar from '../components/Navbar'
+import SearchBar from '../components/SearchBar'
 
 class HomePage extends PureComponent {
   render() {
@@ -9,8 +10,15 @@ class HomePage extends PureComponent {
       <div className="home-page">
         <Navbar />
           <div className="jumbotron">
-            <div className="text-container">
+           <div className="row">
+            <div className="text-container col-md-6">
               <h2 className="header-text">Iedereen verdient een eigen podium.</h2>
+            </div>
+            </div>
+            <div className="row">
+              <div className="search-bar col-md-6">
+                <SearchBar />
+              </div>
             </div>
           </div> {
           // <div className="two-columns row">
