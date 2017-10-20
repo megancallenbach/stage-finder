@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import '../../styles/SearchResults.css'
+import '../../styles/EventPage.css'
 import { Link } from 'react-router'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'

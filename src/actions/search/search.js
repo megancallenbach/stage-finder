@@ -27,9 +27,7 @@ export default (searchInput) => {
           type: SEARCH,
           payload: result
         })
-          .then(() => {
-            history.push('/search-results')
-          })
+        history.push('/search-results')
       })
       .catch((error) => {
         console.error(error)

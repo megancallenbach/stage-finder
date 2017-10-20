@@ -4,7 +4,7 @@ export default (state = [], { type, payload } = {}) => {
   switch (type) {
 
     case SEARCH :
-      return [ ...payload ]
+      return payload.data
 
     default :
       return state
