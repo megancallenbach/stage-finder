@@ -3,44 +3,61 @@
 
 .event-detail
   .event-page
-    width: 80%
+    width: 75%
     margin: 30px auto
+    height: auto
 
   .event-photo
-    width: 100%
-    height: 450px
+    max-height: 350px
     img
-      width: 100%
-      height: 450px
+      max-height: 350px
       object-fit: cover
 
-  .orange-box
-    padding: 50px
-    height: 400px
-    background-color: #F6903D
-    max-width: 50%
+  .black-box
+    padding: 30px
+    height: 350px
+    width: 100%
+    background-color: rgba(0,0,0,0.8)
+    display: flex
+    flex-direction: column
+    padding-top: 10px
+    .event-description
+      padding-top: 15px
+      font-size: 13px
+      height: auto
+  .transparent
+    display: flex
+    justify-content: center
+    flex-direction: column
+    align-items: center
+    .more-info
+      padding-bottom: 20px
+
+
+
+  .artist-count
+    font-size: 18px
 
   .event-name
-    font-size: 36px
+    font-size: 25px
     text-align: left
 
   .event-date
     font-family: 'Khula', sans-serif
-    font-size: 30px
+    font-size: 20px
 
   .event-venue
     font-family: 'Khula', sans-serif
-    font-size: 25px
+    font-size: 18px
 
   .description
     margin-top: 20px
-    font-size: 20px
+    font-size: 14px
     font-weight: 300
 
   .white-box
-    height: 400px
+    height: 350px
     background-color: white
-    max-width: 50%
     padding: 50px
 
     .upcoming
@@ -56,8 +73,7 @@
 
       .join-button
         float: left
-        padding: 20px
-        margin: 20px
+        padding: 10px
         background-color: #43A67C
         border: 1px solid #43A67C
         border-radius: 4px
@@ -65,7 +81,7 @@
         color: white
         width: 100px
         text-align: center
-        font-size: 20px
+        font-size: 13px
 
     .artists-wrapper
       display: flex
@@ -73,13 +89,8 @@
 
 
       .artist-item
-        padding: 5px
-        margin: 5px
-        width: 200px
-        border-style: solid
-        border-color: #000
-        border-width: 1px
-        border-radius: 5px
+        a
+          color: black
 
     p, h3
       color: #000
