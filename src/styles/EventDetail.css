@@ -18,12 +18,23 @@
   height: 400px;
   background-color: #F6903D;
   max-width: 50%; }
-  .event-detail .orange-box .event-name {
-    font-size: 30px;
-    text-align: left; }
-  .event-detail .orange-box .description {
-    font-size: 20px;
-    font-weight: 300; }
+
+.event-detail .event-name {
+  font-size: 36px;
+  text-align: left; }
+
+.event-detail .event-date {
+  font-family: 'Khula', sans-serif;
+  font-size: 30px; }
+
+.event-detail .event-venue {
+  font-family: 'Khula', sans-serif;
+  font-size: 25px; }
+
+.event-detail .description {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 300; }
 
 .event-detail .white-box {
   height: 400px;
