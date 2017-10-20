@@ -1,0 +1,14 @@
+form {
+  padding-top: 100px; }
+
+form.form-inline {
+  width: 700px;
+  margin: auto; }
+  form.form-inline input.form-control {
+    width: 700px;
+    height: 50px;
+    color: black;
+    font-size: 25px;
+    padding: 15px;
+    padding-top: 25px;
+    background: rgba(255, 255, 255, 0.85); }

@@ -11,7 +11,8 @@
   color: white;
   font-weight: 300;
   font-size: 45px;
-  font-family: 'Khula', sans-serif; }
+  font-family: 'Khula', sans-serif;
+  text-align: center; }
 
 .text-container {
   width: 360px;
@@ -107,4 +108,7 @@
 
 .search-bar {
   margin: auto;
+  width: 700px; }
+
+.form-control {
   width: 700px; }
