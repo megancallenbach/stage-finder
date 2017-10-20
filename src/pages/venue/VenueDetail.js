@@ -4,7 +4,6 @@ import '../../styles/VenueDetail.css'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import getVenue from '../../actions/venues/get'
-import Slider from 'react-slick'
 
 class VenueDetail extends PureComponent {
   componentWillMount(){
@@ -24,17 +23,6 @@ class VenueDetail extends PureComponent {
 
   render() {
     if (!this.props.currentVenue) return null
-    var sliderSettings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 2,
-      slidesToScroll: 1,
-      adaptiveHeight: true,
-      arrows: true,
-      autoplay: true,
-      className: 'event-slider'
-    }
 
     return(
       <div className="venue-detail-page">
@@ -54,10 +42,9 @@ class VenueDetail extends PureComponent {
             </div>
           ) : (
 
-            <Slider {...sliderSettings}>
-              {this.props.currentVenue.events.map(this.renderEvent.bind(this))}
-            </Slider>
-
+            <div className="events col-md-12">
+              <h1> Events will go here </h1>
+            </div>
           )}
 
           </div>

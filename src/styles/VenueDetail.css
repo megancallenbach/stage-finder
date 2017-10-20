@@ -34,9 +34,13 @@
     font-weight: 300; }
   .venue-detail-page .no-events {
     height: 200px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 50px; }
-    .venue-detail-page .no-events .upcoming {
+  .venue-detail-page .events {
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 50px; }
+    .venue-detail-page .events .upcoming {
       font-size: 30px;
       font-family: 'Montserrat Subrayada', sans-serif;
       color: #111;
