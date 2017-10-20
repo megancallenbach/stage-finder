@@ -36,8 +36,8 @@ class ArtistDetail extends PureComponent {
 
             <div className="orange-box col-sm-7">
               <h1 className="artist-name">Bio</h1>
-              <p><i className="fa fa-map-marker"></i>{artist.city}</p>
-              <p className="description">{artist.bio}</p>
+              <p className="artist-city"><i className="fa fa-map-marker"></i>{artist.city}</p>
+              <p className="bio">{artist.bio}</p>
 
             </div>
             <div className="white-box col-sm-5">
