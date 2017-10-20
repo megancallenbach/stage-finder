@@ -35,7 +35,7 @@ class CreateEvent extends PureComponent {
     if(!this.props.currentUser.venueProfileId) return null
     return (
       <div className="create-event">
-        <Navbar />
+        <Navbar searchBar={true} />
         <div className="wrapper artist-profile">
           <h1>Create An Event</h1>
           <form onSubmit={this.submitForm.bind(this)}>

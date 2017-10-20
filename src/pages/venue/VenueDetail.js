@@ -18,7 +18,7 @@ class VenueDetail extends PureComponent {
     if (!this.props.currentVenue) return null
     return(
       <div className="venue-detail-page">
-        <Navbar/>
+        <Navbar searchBar={true}/>
           <div className="venue-detail">
             <div className="row">
               <div className="venue-photo col-sm-7">

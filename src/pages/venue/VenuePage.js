@@ -49,7 +49,7 @@ class VenuePage extends PureComponent {
 
     return(
       <div className="venue-page">
-        <Navbar />
+        <Navbar searchBar={true} />
         <div className="scroll">
           <h1>Discover the Venues</h1>
           <div className="venues-container">

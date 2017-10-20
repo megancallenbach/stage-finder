@@ -5,6 +5,8 @@ import { Link } from 'react-router'
 import { push } from 'react-router-redux'
 import getCurrentUser from '../actions/users/get'
 import '../styles/Navbar.css'
+import SearchBar from './SearchBar'
+
 
 class Navbar extends PureComponent {
 
@@ -39,6 +41,9 @@ goToCreateEvent(){
     if (currentUser && currentUser.venueProfileId) return(
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
+         { (this.props.searchBar === true) ?  this.showSearchBar() : null }
+        </li>
+        <li className="nav-item">
           <span className="nav-link" onClick={this.signOutUser.bind(this)}>
             log out
           </span>
@@ -59,6 +64,9 @@ goToCreateEvent(){
     else if (currentUser && !currentUser.venueProfileId) return(
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
+          { (this.props.searchBar === true) ?  this.showSearchBar() : null }
+        </li>
+        <li className="nav-item">
           <span className="nav-link" onClick={this.signOutUser.bind(this)}>
             log out
           </span>
@@ -75,10 +83,23 @@ goToCreateEvent(){
     else return(
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
+          { (this.props.searchBar === true) ?  this.showSearchBar() : null }
+        </li>
+        <li className="nav-item">
           <Link to={'/sign-in'} className="nav-link"> log in </Link>
         </li>
         <li className="nav-item">
           <Link to={'/sign-up'} className="nav-link"> join! </Link>
+        </li>
+      </ul>
+    )
+  }
+
+  showSearchBar() {
+    return (
+      <ul className="navbar-nav ml-auto">
+        <li className="nav-item">
+          <SearchBar id="nav-searchbar" />
         </li>
       </ul>
     )
@@ -104,7 +125,9 @@ goToCreateEvent(){
               <Link to={'/artists'} className="nav-link">all artists</Link>
             </li>
 
+
           </ul>
+          
             { this.sessionButtons() }
         </div>
       </nav>

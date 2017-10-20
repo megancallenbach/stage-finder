@@ -26,7 +26,7 @@ class SignIn extends PureComponent {
 
     return (
       <div className="sign-in">
-      <Navbar />
+      <Navbar searchBar={true} />
         <div className="formWrapper">
           <header>
             <h2>Sign In</h2>

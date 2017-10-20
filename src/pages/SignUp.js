@@ -91,7 +91,7 @@ export class SignUp extends PureComponent {
   render() {
     return (
       <div className="sign-up">
-      <Navbar />
+      <Navbar searchBar={true} />
         <div className="formWrapper">
           <header>
             <h2>Sign Up</h2>
