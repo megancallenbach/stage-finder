@@ -56,6 +56,9 @@ class EventCarousel extends React.Component {
 
     render() {
       let {leftIcon,rightIcon}=this.state;
+
+      const allEvents = (this.props.events instanceof Array) ? this.props.events : [this.props.events]
+
       return(
           <div className="carousel-row">
             <div className="col-md-12">
@@ -69,7 +72,7 @@ class EventCarousel extends React.Component {
                 indicators={false}
                 className="carousel-fade"
               >
-              {this.props.events.map(this.renderEvent.bind(this))}
+              {allEvents.map(this.renderEvent.bind(this))}
 
               </React_Bootstrap_Carousel>
             </div>
