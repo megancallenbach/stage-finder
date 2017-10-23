@@ -7,7 +7,7 @@ export const SEARCH_INPUT = 'SEARCH_INPUT'
 const elasticsearchConnectionString = process.env.SEARCHBOX_URL
 
 const client = new elasticsearch.Client({
-  host: elasticsearchConnectionString,
+  host: 'https://paas:4bf340c8bf2d900aab987a19a4729dee@nori-us-east-1.searchly.com',
 });
 
 export default (searchInput) => {
