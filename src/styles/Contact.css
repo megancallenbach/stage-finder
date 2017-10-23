@@ -1,0 +1,26 @@
+.contact-page {
+  background-image: url("../images/bg1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%; }
+  .contact-page .row {
+    width: 500px;
+    border: 1px solid transparent;
+    padding: 20px;
+    margin: 20px;
+    background-color: rgba(0, 0, 0, 0.38); }
+    .contact-page .row h2 {
+      font-size: 30px; }
+    .contact-page .row p {
+      font-size: 18px;
+      padding: 5px; }
+  .contact-page .contact-container {
+    width: 80%;
+    margin-top: 100px;
+    margin-left: 300px;
+    min-height: 90%; }
+    .contact-page .contact-container i {
+      padding: 0 15px; }
+
+.contact-title {
+  font-size: 40px; }
