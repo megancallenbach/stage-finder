@@ -17,7 +17,7 @@ class HomePage extends PureComponent {
             </div>
             <div className="row">
               <div className="search-bar col-md-6">
-                <SearchBar />
+                <SearchBar showSearch={true}/>
               </div>
             </div>
           </div> {

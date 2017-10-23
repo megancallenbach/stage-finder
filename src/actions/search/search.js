@@ -4,13 +4,16 @@ import { history } from '../../store'
 export const SEARCH_RESULTS = 'SEARCH_RESULTS'
 export const SEARCH_INPUT = 'SEARCH_INPUT'
 
-const elasticsearchConnectionString = process.env.SEARCHBOX_URL
+// const elasticsearchConnectionString = process.env.SEARCHBOX_URL
 
 const client = new elasticsearch.Client({
   host: 'https://paas:4bf340c8bf2d900aab987a19a4729dee@nori-us-east-1.searchly.com',
 });
 
-export default (searchInput) => {
+export default (searchInput, filter) => {
+
+  const searchQuery = (filter) ? `${searchInput} _exists_:paid` : searchInput
+
   return (dispatch) => {
 
     client.search({
@@ -19,7 +22,7 @@ export default (searchInput) => {
       body: {
         query: {
           query_string: {
-            query: searchInput,
+            query: searchQuery,
             fields: ['_all'],
             default_operator: 'and'
           }

@@ -6,16 +6,44 @@ import '../styles/SearchBar.css'
 class SearchBar extends PureComponent {
 
   searchAction(event){
+    debugger
     event.preventDefault()
     const searchInput = this.refs.search.value
-    this.props.search(searchInput)
+    const filter = this.state.filter
+    this.props.search(searchInput, filter)
     document.getElementById('searchForm').reset()
+  }
+
+  state = {
+    filter: false
+  }
+
+  handleChange(){
+    this.setState({
+      filter: !this.state.filter
+    })
+  }
+
+  showSearchOptions(){
+    return (
+      <div className="form-checkbox-item row">
+        <input
+          type="checkbox"
+          id="filterPaidEvents"
+          ref="paid"
+          onChange={this.handleChange.bind(this)} >
+        </input>
+        <p>
+          Show only paid events
+        </p>
+      </div>)
   }
 
   render() {
     return (
       <form onSubmit={this.searchAction.bind(this)} id="searchForm" className="form-inline my-2 my-lg-0">
         <input className="form-control mr-sm-2" ref="search" type="text" placeholder="Find your Stage" aria-label="Search"></input>
+        {(this.props.showSearch) ? this.showSearchOptions() : null}
       </form>
     )
   }
