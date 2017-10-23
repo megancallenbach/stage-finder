@@ -3,6 +3,10 @@
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%; }
+  .venue-page .venue-title {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
   .venue-page .row {
     padding: 0;
     margin: 0; }
