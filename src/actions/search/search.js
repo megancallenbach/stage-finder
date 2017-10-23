@@ -18,7 +18,7 @@ export default (searchInput) => {
       type: 'event',
       body: {
         query: {
-          simple_query_string: {
+          query_string: {
             query: searchInput,
             fields: ['_all'],
             default_operator: 'and'
