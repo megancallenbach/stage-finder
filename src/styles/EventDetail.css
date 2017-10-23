@@ -2,45 +2,72 @@
   margin: 0; }
 
 .event-detail .event-page {
-  width: 80%;
-  margin: 30px auto; }
+  width: 75%;
+  margin: 30px auto;
+  height: auto; }
 
 .event-detail .event-photo {
-  width: 100%;
-  height: 450px; }
+  max-height: 350px; }
   .event-detail .event-photo img {
-    width: 100%;
-    height: 450px;
+    max-height: 350px;
     object-fit: cover; }
 
-.event-detail .orange-box {
-  padding: 50px;
-  height: 400px;
-  background-color: #F6903D;
-  max-width: 50%; }
+.event-detail .black-box {
+  padding: 30px;
+  height: 350px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px; }
+  .event-detail .black-box .event-description {
+    padding-top: 15px;
+    font-size: 13px;
+    height: auto; }
+
+.event-detail .transparent {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; }
+  .event-detail .transparent .more-info {
+    padding-bottom: 20px; }
+
+.event-detail .artist-count {
+  font-size: 18px; }
 
 .event-detail .event-name {
-  font-size: 36px;
+  font-size: 25px;
   text-align: left; }
 
 .event-detail .event-date {
   font-family: 'Khula', sans-serif;
-  font-size: 30px; }
+  font-size: 16px; }
 
 .event-detail .event-venue {
   font-family: 'Khula', sans-serif;
-  font-size: 25px; }
+  font-size: 18px; }
 
 .event-detail .description {
   margin-top: 20px;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 300; }
 
 .event-detail .white-box {
-  height: 400px;
+  min-height: 350px;
   background-color: white;
-  max-width: 50%;
   padding: 50px; }
+  .event-detail .white-box .artists-wrapper {
+    display: flex;
+    flex-direction: column; }
+    .event-detail .white-box .artists-wrapper .artist-item a {
+      color: black;
+      font-size: 12px; }
+    .event-detail .white-box .artists-wrapper .artist-name {
+      padding: 0;
+      margin: 0;
+      text-align: left;
+      line-height: normal; }
   .event-detail .white-box .upcoming {
     font-size: 30px;
     color: #000;
@@ -49,9 +76,7 @@
     display: flex;
     flex-direction: column; }
   .event-detail .white-box .artists-button .join-button {
-    float: left;
-    padding: 20px;
-    margin: 20px;
+    padding: 10px;
     background-color: #43A67C;
     border: 1px solid #43A67C;
     border-radius: 4px;
@@ -59,17 +84,7 @@
     color: white;
     width: 100px;
     text-align: center;
-    font-size: 20px; }
-  .event-detail .white-box .artists-wrapper {
-    display: flex;
-    flex-direction: row; }
-    .event-detail .white-box .artists-wrapper .artist-item {
-      padding: 5px;
-      margin: 5px;
-      width: 200px;
-      border-style: solid;
-      border-color: #000;
-      border-width: 1px;
-      border-radius: 5px; }
+    font-size: 13px;
+    outline: 0; }
   .event-detail .white-box p, .event-detail .white-box h3 {
     color: #000; }

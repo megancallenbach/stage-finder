@@ -29,7 +29,7 @@ class SignIn extends PureComponent {
       <Navbar searchBar={true} />
         <div className="formWrapper">
           <header>
-            <h2>Sign In</h2>
+            <h2 className="title">Sign In</h2>
           </header>
           <main>
             <form className="signInForm" onSubmit={this.submitForm.bind(this)}>

@@ -94,7 +94,7 @@ export class SignUp extends PureComponent {
       <Navbar searchBar={true} />
         <div className="formWrapper">
           <header>
-            <h2>Sign Up</h2>
+            <h2 className="title">Sign Up</h2>
             <ul>
               { (this.state.emailError) ? <li>{this.state.emailError}</li> : null }
               { (this.state.passwordError) ? <li>{this.state.passwordError}</li> : null }

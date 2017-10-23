@@ -1,41 +1,46 @@
-import API from '../../api'
+import elasticsearch from 'elasticsearch'
 import { history } from '../../store'
 
-export const SEARCH_INPUT = 'SEARCH_INPUT'
 export const SEARCH_RESULTS = 'SEARCH_RESULTS'
+export const SEARCH_INPUT = 'SEARCH_INPUT'
 
-const api = new API()
+const elasticsearchConnectionString = process.env.SEARCHBOX_URL
+
+const client = new elasticsearch.Client({
+  host: 'https://paas:4bf340c8bf2d900aab987a19a4729dee@nori-us-east-1.searchly.com',
+});
 
 export default (searchInput) => {
   return (dispatch) => {
 
-    const backend = api.service('search')
-
-    backend.find({
-      query: {
-        $sqs: {
-          $fields: [
-            '_all'
-          ],
-          $query: searchInput,
-          $operator: 'and'
+    client.search({
+      index: 'events',
+      type: 'event',
+      body: {
+        query: {
+          simple_query_string: {
+            query: searchInput,
+            fields: ['_all'],
+            default_operator: 'and'
+          }
         }
       }
     })
-      .then((result) => {
-        console.log(result)
-        dispatch({
-          type: SEARCH_INPUT,
-          payload: searchInput
+      .then((results) => {
+        console.log(results.hits.hits)
+
+        const convertedResults = results.hits.hits.map((result) => {
+          const id = result._id
+          const event = result._source
+          return { ...event, _id: id }
         })
-        dispatch({
-          type: SEARCH_RESULTS,
-          payload: result
-        })
+
+        dispatch({type: SEARCH_RESULTS, payload: convertedResults})
+        dispatch({type: SEARCH_INPUT, payload: searchInput})
         history.push('/search-results')
       })
       .catch((error) => {
-        console.error(error)
+        console.log(error)
       })
   }
 }

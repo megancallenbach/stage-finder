@@ -5,7 +5,7 @@ import { Link } from 'react-router'
 
 
 
-class EventCarousel extends React.Component {
+class ArtistCarousel extends React.Component {
     constructor(props) {
         super(props);
         this.state={}
@@ -38,16 +38,15 @@ class EventCarousel extends React.Component {
       }
     }
 
-    renderEvent(venueEvent, index) {
+    renderEvent(artistEvent, index) {
       return(
-        <Link to={`/events/${venueEvent._id}`}>
-          <div style={{height:250,width:"100%",backgroundColor:"rgba(0,0,0,0.8)"}}>
+        <Link to={`/events/${artistEvent._id}`}>
+          <div style={{height:230,width:"100%",backgroundColor:"white"}}>
             <div className="carousel-center">
-              <h1 className="venue-event-title">{venueEvent.title}</h1>
+              <h1 className="artist-event-title">{artistEvent.title}</h1>
             </div>
             <div className="carousel-caption">
-              <p className="paragraph">{venueEvent.date.split("T")[0]}</p>
-              <p className="paragraph">{venueEvent.artistCount - venueEvent.artistIds.length} spots available!</p>
+              <p className="artist-event-paragraph">{artistEvent.date.split("T")[0]}</p>
             </div>
           </div>
         </Link>
@@ -56,12 +55,11 @@ class EventCarousel extends React.Component {
 
     render() {
       let {leftIcon,rightIcon}=this.state;
-
-      const allEvents = (this.props.events instanceof Array) ? this.props.events : [this.props.events]
-
       return(
-          <div className="carousel-row">
-            <div className="col-md-12">
+        <div className="artist-carousel col-sm-5">
+          <div className="black-background">
+            <h1 className="upcoming">UPCOMING EVENTS</h1>
+          </div>
               <React_Bootstrap_Carousel
                 animation={true}
                 slideshowSpeed={3000}
@@ -70,15 +68,14 @@ class EventCarousel extends React.Component {
                 onSelect={this.onSelect}
                 ref={r=>this.slider=r}
                 indicators={false}
-                className="carousel-fade"
+                className="carousel"
               >
-              {allEvents.map(this.renderEvent.bind(this))}
+              {this.props.events.map(this.renderEvent.bind(this))}
 
               </React_Bootstrap_Carousel>
-            </div>
           </div>
       );
     }
 };
 
-export default EventCarousel
+export default ArtistCarousel
