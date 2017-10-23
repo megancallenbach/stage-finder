@@ -6,6 +6,9 @@
   background-position: center center;
   width: 100%;
   overflow-y: scroll; }
+  .event-page .event-name {
+    font-family: 'Montserrat Subrayada', sans-serif;
+    font-size: 30px; }
 
 .events-container {
   width: 80%;
@@ -29,11 +32,6 @@
 
 .events-title {
   margin-top: 10px; }
-
-.event-name {
-  font-family: 'Montserrat Subrayada', sans-serif;
-  font-size: 30px;
-  height: 60px; }
 
 .btn-event {
   font-family: 'Montserrat Subrayada', sans-serif;

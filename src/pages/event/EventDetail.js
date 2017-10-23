@@ -19,6 +19,8 @@ class EventDetail extends PureComponent {
     const artistId = this.props.currentUser.artistProfileId
     const eventId = this.props.currentEvent._id
     this.props.artistJoinEvent(artistId, eventId)
+    this.setState({difference: artistId})
+    this.forceUpdate()
   }
 
   renderArtist(artist, index){
@@ -73,7 +75,7 @@ class EventDetail extends PureComponent {
               </div>
             </div>
               <div className="artists-wrapper col-sm-12">
-                { artists.map(this.renderArtist.bind(this)) }
+                { artists.map(this.renderArtist.bind(this))}
               </div>
             </div>
             <div className="transparent col-sm-6">
