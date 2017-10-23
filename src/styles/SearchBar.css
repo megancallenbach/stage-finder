@@ -12,3 +12,16 @@ form.form-inline {
     padding: 15px;
     padding-top: 20px;
     background: rgba(255, 255, 255, 0.85); }
+
+.form-checkbox-item {
+  margin: 5px;
+  display: flex;
+  flex-direction: row; }
+  .form-checkbox-item .checkbox {
+    margin: 5px;
+    height: 30px;
+    width: 30px; }
+  .form-checkbox-item p {
+    font-weight: 300;
+    margin-top: 8px;
+    margin-left: 5px; }
