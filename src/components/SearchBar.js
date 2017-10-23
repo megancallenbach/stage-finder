@@ -35,7 +35,7 @@ class SearchBar extends PureComponent {
           onChange={this.handleChange.bind(this)} >
         </input>
         <p>
-          Show only paid events
+          paid events only
         </p>
       </div>)
   }
@@ -43,7 +43,7 @@ class SearchBar extends PureComponent {
   render() {
     return (
       <form onSubmit={this.searchAction.bind(this)} id="searchForm" className="form-inline my-2 my-lg-0">
-        <input className="form-control mr-sm-2" ref="search" type="text" placeholder="Find your Stage" aria-label="Search"></input>
+        <input className="form-control mr-sm-2" ref="search" type="text" placeholder="Enter a location or keyword" aria-label="Search"></input>
         {(this.props.showSearch) ? this.showSearchOptions() : null}
       </form>
     )
