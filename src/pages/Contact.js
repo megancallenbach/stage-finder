@@ -57,11 +57,11 @@ class Contact extends PureComponent {
               <p><i className="fa fa-clock-o"></i>Open time: 24/7</p>
 
             </div>
-            <div className="col-sm-6">
+            <div className="map col-sm-6">
               <MapWithAMakredInfoWindow
                 googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places"
                 loadingElement={<div style={{ height: `100%` }} />}
-                containerElement={<div style={{ height: `300px`, width: `500px` }} />}
+                containerElement={<div style={{ margin: '15px', height: `220px`, width: `370px` }} />}
                 mapElement={<div style={{ height: `100%` }} />}
               />
             </div>

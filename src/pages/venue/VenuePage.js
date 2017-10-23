@@ -51,7 +51,7 @@ class VenuePage extends PureComponent {
       <div className="venue-page">
         <Navbar searchBar={true} />
         <div className="scroll">
-          <h1>Discover the Venues</h1>
+          <h1 className="venue-title">Discover the Venues</h1>
           <div className="venues-container">
             <div className="row">
               { venues.map(this.renderVenue.bind(this)) }
