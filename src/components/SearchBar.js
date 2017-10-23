@@ -6,7 +6,6 @@ import '../styles/SearchBar.css'
 class SearchBar extends PureComponent {
 
   searchAction(event){
-    debugger
     event.preventDefault()
     const searchInput = this.refs.search.value
     const filter = this.state.filter
