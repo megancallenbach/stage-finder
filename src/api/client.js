@@ -5,7 +5,7 @@ import auth from 'feathers-authentication-client'
 import superagent from 'superagent'
 
 const FEATHERS_TOKEN_KEY = 'stagefinder-api'
-const host = 'http://localhost:3030'
+const host = process.env.API_HOST
 
 const feathersClient = feathers()
   .configure(rest(host).superagent(superagent))
