@@ -44,7 +44,7 @@
 
   .event-date
     font-family: 'Khula', sans-serif
-    font-size: 20px
+    font-size: 16px
 
   .event-venue
     font-family: 'Khula', sans-serif
@@ -56,9 +56,23 @@
     font-weight: 300
 
   .white-box
-    height: 350px
+    min-height: 350px
     background-color: white
     padding: 50px
+
+    .artists-wrapper
+      display: flex
+      flex-direction: column
+
+      .artist-item
+        a
+          color: black
+          font-size: 12px
+      .artist-name
+        padding: 0
+        margin: 0
+        text-align: left
+        line-height: normal
 
     .upcoming
       font-size: 30px
@@ -72,7 +86,6 @@
     .artists-button
 
       .join-button
-        float: left
         padding: 10px
         background-color: #43A67C
         border: 1px solid #43A67C
@@ -82,15 +95,12 @@
         width: 100px
         text-align: center
         font-size: 13px
-
-    .artists-wrapper
-      display: flex
-      flex-direction: row
+        outline: 0
 
 
-      .artist-item
-        a
-          color: black
+
+
+
 
     p, h3
       color: #000

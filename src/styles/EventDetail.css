@@ -42,7 +42,7 @@
 
 .event-detail .event-date {
   font-family: 'Khula', sans-serif;
-  font-size: 20px; }
+  font-size: 16px; }
 
 .event-detail .event-venue {
   font-family: 'Khula', sans-serif;
@@ -54,9 +54,20 @@
   font-weight: 300; }
 
 .event-detail .white-box {
-  height: 350px;
+  min-height: 350px;
   background-color: white;
   padding: 50px; }
+  .event-detail .white-box .artists-wrapper {
+    display: flex;
+    flex-direction: column; }
+    .event-detail .white-box .artists-wrapper .artist-item a {
+      color: black;
+      font-size: 12px; }
+    .event-detail .white-box .artists-wrapper .artist-name {
+      padding: 0;
+      margin: 0;
+      text-align: left;
+      line-height: normal; }
   .event-detail .white-box .upcoming {
     font-size: 30px;
     color: #000;
@@ -65,7 +76,6 @@
     display: flex;
     flex-direction: column; }
   .event-detail .white-box .artists-button .join-button {
-    float: left;
     padding: 10px;
     background-color: #43A67C;
     border: 1px solid #43A67C;
@@ -74,11 +84,7 @@
     color: white;
     width: 100px;
     text-align: center;
-    font-size: 13px; }
-  .event-detail .white-box .artists-wrapper {
-    display: flex;
-    flex-direction: row; }
-    .event-detail .white-box .artists-wrapper .artist-item a {
-      color: black; }
+    font-size: 13px;
+    outline: 0; }
   .event-detail .white-box p, .event-detail .white-box h3 {
     color: #000; }
