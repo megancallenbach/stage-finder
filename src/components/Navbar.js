@@ -127,7 +127,7 @@ goToCreateEvent(){
 
 
           </ul>
-          
+
             { this.sessionButtons() }
         </div>
       </nav>

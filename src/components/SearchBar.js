@@ -15,7 +15,7 @@ class SearchBar extends PureComponent {
   render() {
     return (
       <form onSubmit={this.searchAction.bind(this)} id="searchForm" className="form-inline my-2 my-lg-0">
-        <input className="form-control mr-sm-2" ref="search" type="text" placeholder="Find a Stage" aria-label="Search"></input>
+        <input className="form-control mr-sm-2" ref="search" type="text" placeholder="Find your Stage" aria-label="Search"></input>
       </form>
     )
   }
