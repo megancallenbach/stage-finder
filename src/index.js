@@ -23,7 +23,9 @@ import EditVenueProfile from './pages/venue/EditVenueProfile'
 import EventPage from './pages/event/EventPage'
 import EventDetail from './pages/event/EventDetail'
 import SearchResults from './pages/search/SearchResults'
-import Contact from "./pages/Contact"
+import Contact from './pages/Contact'
+import Faq from './pages/Faq'
+import About from './pages/About'
 import App from './App'
 
 ReactDOM.render(
@@ -47,6 +49,9 @@ ReactDOM.render(
           <Route path="/events/:eventId" component={EventDetail} />
           <Route path="/search-results" component={SearchResults} />
           <Route path="/contact" component={Contact} />
+          <Route path="/faq" component={Faq} />
+          <Route path="/about" component={About} />
+
         </Route>
       </Router>
     </Provider>,
