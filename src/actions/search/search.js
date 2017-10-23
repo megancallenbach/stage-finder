@@ -4,9 +4,10 @@ import { history } from '../../store'
 export const SEARCH_RESULTS = 'SEARCH_RESULTS'
 export const SEARCH_INPUT = 'SEARCH_INPUT'
 
+const elasticsearchConnectionString = process.env.SEARCHBOX_URL || 'localhost:9200'
+
 const client = new elasticsearch.Client({
-  host: 'localhost:9200',
-  log: 'trace'
+  host: elasticsearchConnectionString,
 });
 
 export default (searchInput) => {
