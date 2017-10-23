@@ -4,15 +4,25 @@ import '../../styles/ArtistDetail.css'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import getArtist from '../../actions/artists/get'
+import fetchEvents from '../../actions/events/fetch'
+import ArtistCarousel from '../../components/ArtistCarousel'
 
 class ArtistDetail extends PureComponent {
   componentWillMount(){
     this.props.getArtist(this.props.params.artistId)
+    this.props.fetchEvents()
   }
 
   render() {
+
     if (!this.props.currentArtist) return null
     const artist = this.props.currentArtist
+    if (!this.props.events) return null
+    const events = this.props.events.filter((oneEvent) => {
+      return oneEvent.artistIds.filter((artistId) => {
+        return artistId === this.props.currentArtist._id
+      })
+    })
     return(
       <div className="artist-detail">
         <Navbar searchBar={true}/>
@@ -40,10 +50,17 @@ class ArtistDetail extends PureComponent {
               <p className="bio">{artist.bio}</p>
 
             </div>
-            <div className="white-box col-sm-5">
-              <h1 className="upcoming">Upcoming</h1>
-              {artist.eventIds.length > 0 ? <p className="black-text">Events will show here...</p> : <p className="black-text">This artist has no upcoming events...</p> }
-            </div>
+
+
+            {artist.eventIds.length > 0 ? (
+              <ArtistCarousel events={events}/>
+            ) : (
+              <div className="white-box col-sm-5">
+                <h1 className="upcoming">Upcoming</h1>
+                <p className="black-text">This artist has no upcoming events...</p>
+              </div>
+            ) }
+
             <div className="row photo-quote">
               <div className="artist-photo-md col-md-6">
                 <img src={artist.photo} alt=""/>
@@ -60,6 +77,6 @@ class ArtistDetail extends PureComponent {
     )
   }
 }
-const mapStateToProps = ({ currentArtist }) => ({ currentArtist })
+const mapStateToProps = ({ currentArtist, events }) => ({ currentArtist, events })
 
-export default connect(mapStateToProps, { getArtist })(ArtistDetail)
+export default connect(mapStateToProps, { getArtist, fetchEvents })(ArtistDetail)

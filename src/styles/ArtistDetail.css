@@ -23,6 +23,38 @@
     width: 100%;
     height: auto; }
 
+.artist-detail .artist-carousel .carousel-center {
+  margin-top: -50px; }
+
+.artist-detail .artist-carousel .carousel-control {
+  background-color: white;
+  background-image: linear-gradient(white, white); }
+
+.artist-detail .artist-carousel .glaphicon {
+  color: grey; }
+
+.artist-detail .artist-carousel .carousel-caption {
+  bottom: 50px;
+  padding-top: 0; }
+
+.artist-detail .artist-carousel .upcoming {
+  font-size: 30px;
+  font-family: 'Montserrat Subrayada', sans-serif;
+  color: black; }
+
+.artist-detail .artist-carousel .black-background {
+  padding-top: 10px;
+  background-color: white;
+  height: 70px; }
+
+.artist-detail .artist-carousel .artist-event-title {
+  color: black;
+  font-family: 'Kula', sans-serif; }
+
+.artist-detail .artist-carousel .artist-event-paragraph {
+  color: black;
+  font-size: 15px; }
+
 .artist-detail .artist-city {
   font-size: 15px; }
 
