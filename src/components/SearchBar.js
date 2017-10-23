@@ -26,9 +26,10 @@ class SearchBar extends PureComponent {
 
   showSearchOptions(){
     return (
-      <div className="form-checkbox-item row">
+      <div className="form-checkbox-item">
         <input
           type="checkbox"
+          className="checkbox"
           id="filterPaidEvents"
           ref="paid"
           onChange={this.handleChange.bind(this)} >
