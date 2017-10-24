@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import '../styles/Contact.css'
-import { compose, withProps, withStateHandlers } from "recompose";
+import { compose, withStateHandlers } from "recompose";
 import {
   withScriptjs,
   withGoogleMap,

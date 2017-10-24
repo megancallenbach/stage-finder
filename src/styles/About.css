@@ -1,7 +1,4 @@
 .about-page {
-  background-image: url("../images/bg1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
   width: 70%; }
   .about-page .map {
     padding-top: 20px; }
