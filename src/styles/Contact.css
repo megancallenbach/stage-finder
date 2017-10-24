@@ -2,22 +2,23 @@
   background-image: url("../images/bg1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  width: 70%; }
-  .contact-page .map {
-    padding-top: 20px; }
-    .contact-page .map h2 {
-      font-size: 30px; }
-    .contact-page .map p {
-      font-size: 18px;
-      padding: 5px; }
-  .contact-page .contact-container {
-    width: 100%;
-    margin-top: 100px;
-    margin-left: 200px;
-    min-height: 90%;
+  width: 100%; }
+  .contact-page .row {
+    width: 500px;
+    border: 1px solid transparent;
     padding: 20px;
     margin: 15px;
     background-color: rgba(0, 0, 0, 0.45); }
+  .contact-page h2 {
+    font-size: 30px; }
+  .contact-page p {
+    font-size: 18px;
+    padding: 5px; }
+  .contact-page .contact-container {
+    width: 80%;
+    margin-top: 100px;
+    margin-left: 200px;
+    min-height: 90%; }
     .contact-page .contact-container i {
       padding: 0 15px; }
 
