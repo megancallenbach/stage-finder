@@ -41,7 +41,7 @@ class EventCarousel extends React.Component {
     renderEvent(venueEvent, index) {
       return(
         <Link to={`/events/${venueEvent._id}`}>
-          <div style={{height:250,width:"100%",backgroundColor:"rgba(0,0,0,0.8)"}}>
+          <div style={{height:220,width:"100%",backgroundColor:"rgba(0,0,0,0.8)"}}>
             <div className="carousel-center">
               <h1 className="venue-event-title">{venueEvent.title}</h1>
             </div>
