@@ -44,7 +44,7 @@ class EventDetail extends PureComponent {
     if (!currentEvent) return null
 
     const artists = [].concat(currentEvent.artists)
-    const artistCount = (currentEvent.artistCount - artists.length)
+    const artistCount = (currentEvent.artistCount - this.props.currentEvent.artistIds.length)
     const payment = currentEvent.paid
 
     return(
@@ -71,7 +71,7 @@ class EventDetail extends PureComponent {
                 <p className="artist-count">{this.renderArtistCount(artistCount)}</p>
               </div>
               <div className="artists-button col-sm-12">
-              { (this.props.currentUser.artistProfileId && artistCount > 0) ? <button className="join-button" onClick={this.joinEvent.bind(this)}>Join!</button> : null }
+              { (this.props.currentUser && this.props.currentUser.artistProfileId && artistCount > 0) ? <button className="join-button" onClick={this.joinEvent.bind(this)}>Join!</button> : null }
               </div>
             </div>
               <div className="artists-wrapper col-sm-12">
@@ -80,7 +80,6 @@ class EventDetail extends PureComponent {
             </div>
             <div className="transparent col-sm-6">
               <h1 className="more-info">StageFinder</h1>
-
             </div>
           </div>
         </div>

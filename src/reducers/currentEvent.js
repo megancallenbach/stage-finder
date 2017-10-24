@@ -7,12 +7,21 @@ export default (state = null, { type, payload } = {}) => {
     case GET_EVENT :
       return payload
 
-    case ARTIST_JOINED_EVENT :
+    case ARTIST_JOINED_EVENT : {
       const newState = { ...state }
-      newState.artists instanceof Array ? newState.artists.push(payload) : [newState.artists].push(payload)
+
+      if (!newState.artists){
+        newState.artists = [payload]
+      }else if (newState.artists instanceof Array){
+        newState.artists.push(payload)
+      }else{
+        [newState.artists].push(payload)
+      }
+
       newState.artistIds.push(payload._id)
-      
+
       return newState
+    }
 
     default :
       return state
