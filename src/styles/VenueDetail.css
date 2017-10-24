@@ -21,7 +21,8 @@
   .venue-detail-page .black-box {
     height: 300px;
     background-color: black;
-    padding: 50px; }
+    padding: 50px;
+    overflow: hidden; }
   .venue-detail-page .orange-box {
     padding: 50px;
     height: 400px;
@@ -32,7 +33,9 @@
     text-align: left; }
   .venue-detail-page .description {
     font-size: 20px;
-    font-weight: 300; }
+    font-weight: 300;
+    height: 150px;
+    overflow: hidden; }
   .venue-detail-page .events-title {
     margin: 0;
     padding: 0; }
