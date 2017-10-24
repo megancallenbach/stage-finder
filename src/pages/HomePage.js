@@ -21,18 +21,6 @@ class HomePage extends PureComponent {
               </div>
             </div>
           </div> {
-          // <div className="two-columns row">
-          //   <div className="image-two col-sm-6">
-          //     <h3 className="white-text"> Heb jij het lef? </h3>
-          //     <button className="btn-orange"><Link to={'/venues'} className="link">Find your stage</Link></button>
-          //   </div>
-          //   <div className="text-three col-sm-6">
-          //     <h3 className="black-text"> Wij gunnen elke musikant het lef om op een podium te gaan staan. </h3>
-          //     <button className="btn-white"><Link to={'/inspiration'} className="link">Inspiration</Link></button>
-          //   </div>
-          // </div>
-
-          // < Footer />
         }
       </div>
     )
