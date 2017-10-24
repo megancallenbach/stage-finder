@@ -1,5 +1,4 @@
 import API from '../../api'
-import { history } from '../../store'
 
 const JOIN_EVENT = 'JOIN_EVENT'
 export const ARTIST_JOINED_EVENT = 'ARTIST_JOINED_EVENT'
